@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "our_games": "Nossos jogos",
+    "about_us": "Sobre nós",
+    "extension": "Extensão promogame"
+  },
+
+  "HomePage": {
+    "title": "Nós somos",
+    "typed": "jogos de horror!;código aberto.;Jogos de RPG!"
+  },
+  "GitHub": {
+    "title:github": "Vá ao nosso Github!",
+    "paragraph:1": "No Finituz Game Studio, acreditamos no poder da colaboração e da transparência. Por isso, compartilhamos com orgulho o nosso trabalho por meio do nosso repositório de código aberto no GitHub. Ao disponibilizar nosso código, ativos e ferramentas ao público, convidamos outros desenvolvedores a aprender, contribuir e construir sobre nossos projetos.",
+    "paragraph:2": "Nosso repositório no GitHub conta com:<ul className=\"list-disc ml-20 my-5\"><li><strong>Projetos de Jogos:</strong> Explore nossos projetos de jogos atuais e passados, incluindo código-fonte, documentação e ativos. </li> <li> <strong>Ferramentas de Desenvolvimento:</strong> Acesse ferramentas e utilitários que desenvolvemos para agilizar o processo de criação de jogos. </li> <li> <strong>Contribuições:</strong> Engaje-se com nossa comunidade enviando problemas, sugerindo melhorias ou contribuindo com código. </li> </ul>",
+    "paragraph:3": "Estamos comprometidos em promover um ambiente aberto e colaborativo onde a criatividade e a inovação possam prosperar. Junte-se a nós no GitHub e faça parte da nossa jornada para moldar o futuro dos jogos independentes.",
+    "link:join_us": "Junte-se a nós!"
+  },
+
+  "Newsletter": {
+    "label:email": "E-mail",
+    "placeholder:email": "Seu melhor e-mail...",
+    "button:subscribe": "Inscreva-se"
+  },
+  "Footer": {
+    "subtitle:social_medias": "Redes sociais",
+    "subtitle:contact_us": "Entre em contato",
+    "subtitle:newsletter": "NewsLetter",
+    "name:copyright": "Estudios Finituz"
+  }
+}

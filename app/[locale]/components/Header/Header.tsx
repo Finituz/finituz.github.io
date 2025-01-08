@@ -9,7 +9,11 @@ import {
 } from "react-icons/ri";
 
 import Logo from "@/public/logo.png";
+import { useTranslations } from "next-intl";
+
 export default function Header() {
+  const t = useTranslations("Header");
+
   const menuClicked = () => {
     const list = document.getElementById("menu-list") as HTMLUListElement;
     const overlay = document.getElementById("mobile-overlay") as HTMLDivElement;
@@ -36,19 +40,19 @@ export default function Header() {
         >
           <li>
             <a href="#games" className="flex items-center gap-2">
-              <RiGamepadLine /> Our games
+              <RiGamepadLine /> {t("our_games")}
             </a>
           </li>
           <li>
             <a href="#about-us" className="flex items-center gap-2">
               <RiBuilding4Line />
-              About us
+              {t("about_us")}
             </a>
           </li>
           <li className="md:hidden">
             <a href="#extension" className="flex items-center gap-2">
               <RiAddCircleLine />
-              Promogame Extension
+              {t("extension")}
             </a>
           </li>
         </ul>

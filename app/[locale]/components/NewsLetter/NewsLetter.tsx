@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function NewsLetter() {
+  const t = useTranslations("Newsletter");
+
   const submit = (event: SubmitEvent) => {
     event.preventDefault();
 
@@ -22,14 +26,14 @@ export default function NewsLetter() {
       <form method="POST" className="newsletter flex flex-col gap-5 w-full">
         <fieldset>
           <label className="flex flex-col">
-            E-mail:
+            {t("label:email")}
             <input
               id="email"
               name="email"
               type="email"
               className="border border-white bg-transparent rounded-lg p-2 placeholder:text-gray-300"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              placeholder="Your email..."
+              placeholder={t("placeholder:email")}
             />
           </label>
         </fieldset>
@@ -38,7 +42,7 @@ export default function NewsLetter() {
           className="border border-white bg-red-500 hover:bg-red-400
                     hover:shadow-neon transition-shadow duration-300 rounded-lg p-2"
         >
-          Subscribe!
+          {t("button:subscribe")}
         </button>
       </form>
     </>

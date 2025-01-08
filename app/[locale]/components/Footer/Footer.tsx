@@ -1,13 +1,16 @@
 import { RiDiscordFill, RiLinkedinBoxFill, RiRedditFill } from "react-icons/ri";
 import Listitem from "./ListItem/ListItem";
 import NewsLetter from "../NewsLetter/NewsLetter";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer className="bg-red-900 border-t-2 text-left text-2xl px-10 py-5">
       <span className="flex flex-col md:gap-0 md:flex-row gap-5 justify-between">
         <div>
-          <strong> Social medias </strong>
+          <strong>{t("subtitle:social_medias")}</strong>
           <hr />
           <ul>
             <Listitem
@@ -25,7 +28,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <strong>Contact us</strong>
+          <strong>{t("subtitle:contact_us")}</strong>
           <hr />
           <ul>
             <Listitem url="mailto:feedback@finituz.com" target="_blank">
@@ -40,13 +43,13 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <strong>Our news letter!</strong>
+          <strong>{t("subtitle:newsletter")}</strong>
           <hr />
           <NewsLetter />
         </div>
       </span>
       <div className="mt-5 text-center">
-        Finituz Studio&copy;{new Date().getFullYear()}
+        {t("name:copyright")}&copy;{new Date().getFullYear()}
       </div>
     </footer>
   );

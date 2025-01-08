@@ -1,0 +1,28 @@
+{
+  "Header": {
+    "our_games": "Our games",
+    "about_us": "About us",
+    "extension": "Promogame extension"
+  },
+
+  "HomePage": {
+    "title": "We are",
+    "typed": "horror games!;open-source.;RPG games!",
+    "about": "Go to the about page"
+  },
+
+  "GitHub": {
+    "title:github": "Go to our Github!",
+    "paragraph:1": "At Finituz Game Studio, we believe in the power of collaboration and transparency. That&apos;s why we proudly share our work through our open-source GitHub repository. By making our code, assets, and tools available to the public, we invite other developers to learn from, contribute to, and build upon our projects.",
+    "paragraph:2": "<b>olá</b>",
+    "paragraph:3": "We&apos;re committed to fostering an open and collaborative environment where creativity and innovation can thrive. Join us on GitHub, and be part of our journey in shaping the future of indie games.",
+    "link:join_us": "Join us!"
+  },
+
+  "Footer": {
+    "subtitle:social_medias": "Social Medias",
+    "subtitle:contact_us": "Contact us",
+    "subtitle:newsletter": "NewsLetter",
+    "name:copyright": "Finituz Studio"
+  }
+}

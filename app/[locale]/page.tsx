@@ -3,13 +3,11 @@
 import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import { RiChromeFill, RiInformationFill } from "react-icons/ri";
-import { useState } from "react";
 
 import Table from "./components/Table/Table";
 import InfoTable from "./components/InfoTable/InfoTable";
 import Card from "./components/Card/Card";
 import Lantern from "./components/Lantern/Lantern";
-import Game from "./components/Game/Game";
 
 import github from "@/public/imgs/github.svg";
 
@@ -23,9 +21,10 @@ import extensionImage from "@/public/imgs/extension.png";
 
 import douglas from "@/public/imgs/team/douglas_guimaraes.png";
 import Slide from "./components/Slide/Slide";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
-  const [startGame, setStartGame] = useState(false);
+  const t = useTranslations();
 
   return (
     <main className="flex min-h-screen overflow-x-hidden w-full flex-col items-center justify-between">
@@ -34,76 +33,34 @@ export default function Home() {
         className="flex flex-col items-center justify-center gap-10 h-screen"
       >
         <Lantern className="top-0 left-1/2 -translate-x-1/2" />
-        {startGame ? (
-          <Game />
-        ) : (
-          <>
-            <h1 className="flex flex-col text-7xl text-center h-72 lg:flex-row mt-24">
-              We are&nbsp;
-              <ReactTyped
-                strings={["horror games!", "open-source.", "RPG games!"]}
-                typeSpeed={100}
-                loop
-                backSpeed={20}
-                showCursor
-              />
-            </h1>
-            {/* <div className="w-2/4 h-1/6"> */}
-            {/*   <button */}
-            {/*     onClick={() => setStartGame(true)} */}
-            {/*     className="border border-white bg-red-500 hover:bg-red-400 transition-color */}
-            {/*         shadow-neon duration-300 w-full h-full rounded-lg p-2" */}
-            {/*   > */}
-            {/*     Start game! */}
-            {/*   </button> */}
-            {/* </div> */}
-            <div className="flex relative flex-col text-7xl animate-bounce">
-              <span>v</span>
-              <span className="absolute top-10">v</span>
-            </div>
-          </>
-        )}
+        <h1 className="flex flex-col text-7xl text-center h-72 lg:flex-row mt-24">
+          {t("HomePage.title")}&nbsp;
+          <ReactTyped
+            strings={Array.from(t("HomePage.typed").split(";"))}
+            typeSpeed={100}
+            loop
+            backSpeed={20}
+            showCursor
+          />
+        </h1>
+        <div className="flex relative flex-col text-7xl animate-bounce">
+          <span>v</span>
+          <span className="absolute top-10">v</span>
+        </div>
       </section>
       <section id="github">
-        <Table showTitle title="Go to our github!">
+        <Table showTitle title={t("GitHub.title:github")}>
           <article>
-            <p>
-              At Finituz Game Studio, we believe in the power of collaboration
-              and transparency. That&apos;s why we proudly share our work
-              through our open-source GitHub repository. By making our code,
-              assets, and tools available to the public, we invite other
-              developers to learn from, contribute to, and build upon our
-              projects.
-            </p>
-            Our GitHub repository features:
-            <ul className="list-disc ml-20 my-5">
-              <li>
-                <strong>Game Projects:</strong> Explore our current and past
-                game projects, including source code, documentation, and assets.
-              </li>
-              <li>
-                <strong>Development Tools:</strong> Access tools and utilities
-                we&apos;ve developed to streamline the game creation process.
-              </li>
-              <li>
-                <strong> Contributions: </strong> Engage with our community by
-                submitting issues, suggesting improvements, or contributing
-                code.
-              </li>
-            </ul>
-            <p>
-              We&apos;re committed to fostering an open and collaborative
-              environment where creativity and innovation can thrive. Join us on
-              GitHub, and be part of our journey in shaping the future of indie
-              games.
-            </p>
+            <p>{t("GitHub.paragraph:1")}</p>
+            <p>{t("GitHub.paragraph:2")}</p>
+            <p>{t("GitHub.paragraph:3")}</p>
             <a
               href="https://github.com/Finituz?tab=repositories"
               target="_blank"
               className="flex flex-col cursor-pointer hover:scale-110 transition-transform duration-500 justify-center items-center gap-5  my-10 w-full"
             >
               <Image src={github} alt="" width={150} />
-              <strong className="text-5xl">Join us!</strong>
+              <strong className="text-5xl">{t("GitHub.link:join_us")}</strong>
             </a>
           </article>
         </Table>

@@ -1,4 +1,4 @@
-import Table from "@/app/components/Table/Table";
+import Table from "../Table/Table";
 import Image, { StaticImageData } from "next/image";
 
 export default function Card({
