@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Table from "../Table/Table";
 import Image, { StaticImageData } from "next/image";
 
@@ -12,6 +13,8 @@ export default function Card({
   imageAlt: string;
   isReleased?: boolean;
 }) {
+  const t = useTranslations("Card");
+
   return (
     <Table
       className="relative text-center overflow-hidden hover:scale-110 transition-all hover:shadow-neon duration-500 w-fit"
@@ -20,7 +23,7 @@ export default function Card({
     >
       {!isReleased ? (
         <div className="absolute flex items-center justify-center bottom-10 left-5 bg-black w-[150%] h-10 rotate-[-45deg]">
-          Coming soon!
+          {t("text:coming_soon")}
         </div>
       ) : null}
 

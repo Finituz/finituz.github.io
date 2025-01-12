@@ -9,12 +9,54 @@
     "title": "Nós somos",
     "typed": "jogos de horror!;código aberto.;Jogos de RPG!"
   },
+
   "GitHub": {
     "title:github": "Vá ao nosso Github!",
     "paragraph:1": "No Finituz Game Studio, acreditamos no poder da colaboração e da transparência. Por isso, compartilhamos com orgulho o nosso trabalho por meio do nosso repositório de código aberto no GitHub. Ao disponibilizar nosso código, ativos e ferramentas ao público, convidamos outros desenvolvedores a aprender, contribuir e construir sobre nossos projetos.",
-    "paragraph:2": "Nosso repositório no GitHub conta com:<ul className=\"list-disc ml-20 my-5\"><li><strong>Projetos de Jogos:</strong> Explore nossos projetos de jogos atuais e passados, incluindo código-fonte, documentação e ativos. </li> <li> <strong>Ferramentas de Desenvolvimento:</strong> Acesse ferramentas e utilitários que desenvolvemos para agilizar o processo de criação de jogos. </li> <li> <strong>Contribuições:</strong> Engaje-se com nossa comunidade enviando problemas, sugerindo melhorias ou contribuindo com código. </li> </ul>",
+    "paragraph:2": "Nosso repositório no GitHub conta com:<ul><li><strong>Projetos de Jogos:</strong> Explore nossos projetos de jogos atuais e passados, incluindo código-fonte, documentação e ativos. </li> <li> <strong>Ferramentas de Desenvolvimento:</strong> Acesse ferramentas e utilitários que desenvolvemos para agilizar o processo de criação de jogos. </li> <li> <strong>Contribuições:</strong> Engaje-se com nossa comunidade enviando problemas, sugerindo melhorias ou contribuindo com código. </li> </ul>",
     "paragraph:3": "Estamos comprometidos em promover um ambiente aberto e colaborativo onde a criatividade e a inovação possam prosperar. Junte-se a nós no GitHub e faça parte da nossa jornada para moldar o futuro dos jogos independentes.",
     "link:join_us": "Junte-se a nós!"
+  },
+
+  "Techs": {
+    "title:techs:1": "Tecnologias que nós",
+    "title:techs:2": "odiamos",
+    "title:techs:3": "~ brincadeirinha :P",
+    "title:techs:4": "usar!",
+    "tip": "Dica: Clique nos ícones para ir aos sites desses projetos e dar suporte a eles também.",
+    "godot:paragraph": "Godot é uma engine open-source para desenvolvimento de jogos 2D e 3D. Ela possui um sistema de cena baseado em nós, suporta GDScript, VisualScript e C#, e permite exportações multiplataforma para diversos dispositivos. Com um editor visual, ferramentas poderosas para 2D e 3D, e extensibilidade através de plugins, o Godot é conhecido por sua flexibilidade, desempenho e comunidade ativa. É gratuito para usar, sem royalties.",
+    "pixelorama:paragraph": "Pixelorama é um motor de jogo open-source 2D otimizado para jogos em pixel art. Ele possui um editor visual fácil de usar, suporta script com GDScript e permite exportações multiplataforma. Projetado para simplicidade e acessibilidade, é ideal para desenvolvedores indie que trabalham com jogos baseados em pixel.",
+    "blender:paragraph": "Blender é uma suíte 3D gratuita e open-source que oferece ferramentas poderosas para modelagem, animação, renderização, escultura, texturização e edição de vídeo. Inclui recursos avançados para simulações e scripting, e está disponível para Linux, macOS e Windows. O Blender é renomado por sua versatilidade e forte apoio da comunidade.",
+    "gimp:paragraph": "GIMP, que significa GNU Image Manipulation Program, é um editor de gráficos gratuito e open-source utilizado para tarefas como retoque de fotos, composição de imagens e criação de imagens. Frequentemente comparado ao Adobe Photoshop devido às suas capacidades semelhantes, incluindo camadas, filtros e várias ferramentas de edição. O GIMP suporta uma ampla gama de formatos de arquivo e é popular tanto entre designers gráficos amadores quanto profissionais, devido aos seus recursos poderosos e customização."
+  },
+
+  "Games": {
+    "title:games": "Nossos Jogos!"
+  },
+
+  "Card": {
+    "text:coming_soon": "Em breve!"
+  },
+
+  "Extension": {
+    "title:extension": "Procurando descontos em jogos?",
+    "subtitle:extension": "Adicione nossa extensão de lista de desejos de descontos!",
+    "paragraph": "Nossa extensão facilita saber quando os jogos que você deseja comprar estão com desconto. Além disso, você recebe notificações para pegar jogos gratuitos por tempo limitado!",
+    "callToAction": "Baixe no <icon></icon> (Em breve!)"
+  },
+
+  "About_us": {
+    "title:about_us": "Sobre nós",
+    "paragraph:1": "Olá! Eu sou Douglas Guimarães, e estou empolgado em apresentar a Finituz, nosso novo estúdio indie de jogos, que foi oficialmente lançado em 2024. Na Finituz, somos apaixonados por ultrapassar os limites do desenvolvimento de jogos, e estamos fazendo isso com um conjunto de ferramentas incríveis: Godot Engine, GIMP, Pixelorama e Blender. Mal posso esperar para compartilhar mais sobre o que estamos criando e como estamos fazendo as coisas de uma forma um pouco diferente.",
+    "subtitle:2": "Nossa Visão e Futuro",
+    "paragraph:2": "Na Finituz, acreditamos em colaboração e inovação. Ao usar o Godot, GIMP, Pixelorama e Blender, não estamos apenas aprimorando nosso próprio processo de desenvolvimento, mas também contribuindo para a comunidade indie de jogos. Acreditamos em expandir os limites do que os jogos indie podem alcançar, e nossa equipe está dedicada a explorar novas ideias e tecnologias.",
+    "paragraph:3": "Olhando para o futuro, estamos empolgados com as possibilidades que estão à nossa frente. Nosso compromisso com essas ferramentas e nossa paixão pelo desenvolvimento de jogos estão nos impulsionando a criar algo verdadeiramente especial. Para todos que têm interesse em jogos indie, convidamos vocês a se juntar a nós nessa jornada.",
+    "subtitle:4": "Fique Conectado",
+    "paragraph:4": "Para acompanhar nossas últimas notícias, atualizações e vislumbres dos bastidores, não deixe de se inscrever em nossa newsletter. E não perca a conversa—siga-nos no Discord, Reddit e LinkedIn para interagir com nossa comunidade e fazer parte de nossa emocionante aventura.",
+    "paragraph:5": "Obrigado por fazer parte da nossa história. Estamos ansiosos para nos conectar com você e compartilhar as coisas incríveis que temos reservadas!",
+    "author_name": "Douglas Guimarães",
+    "douglas:team_role": "Fundador",
+    "title:team": "Nossa equipe <b>irada</b>:"
   },
 
   "Newsletter": {

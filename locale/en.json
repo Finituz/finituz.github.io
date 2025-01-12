@@ -7,16 +7,56 @@
 
   "HomePage": {
     "title": "We are",
-    "typed": "horror games!;open-source.;RPG games!",
-    "about": "Go to the about page"
+    "typed": "horror games!;open-source.;RPG games!"
   },
 
   "GitHub": {
     "title:github": "Go to our Github!",
     "paragraph:1": "At Finituz Game Studio, we believe in the power of collaboration and transparency. That&apos;s why we proudly share our work through our open-source GitHub repository. By making our code, assets, and tools available to the public, we invite other developers to learn from, contribute to, and build upon our projects.",
-    "paragraph:2": "<b>olá</b>",
+    "paragraph:2": "Our GitHub repository features:<ul className=\"list-disc ml-20 my-5\"><li><strong>Game Projects:</strong> Explore our current and past game projects, including source code, documentation, and assets.</li><li><strong>Development Tools:</strong> Access tools and utilities we&apos;ve developed to streamline the game creation process.</li><li><strong> Contributions: </strong> Engage with our community by submitting issues, suggesting improvements, or contributing code.</li></ul>",
     "paragraph:3": "We&apos;re committed to fostering an open and collaborative environment where creativity and innovation can thrive. Join us on GitHub, and be part of our journey in shaping the future of indie games.",
     "link:join_us": "Join us!"
+  },
+
+  "Techs": {
+    "title:techs:1": "Technologies that we",
+    "title:techs:2": "hate",
+    "title:techs:3": "~ just kidding :P",
+    "title:techs:4": "to use!",
+    "tip": "Tip: click on their icon and support those awesome projects too!!!",
+    "godot:paragraph": "Godot is an open-source game engine for 2D and 3D game development. It features a node-based scene system, supports GDScript, VisualScript, and C#, and allows cross-platform exports to various devices. With a visual editor, strong 2D and 3D tools, and extensibility through plugins, Godot is known for its flexibility, performance, and active community. It&apos;s free to use with no royalties.",
+    "pixelorama:paragraph": "Pixolorama is an open-source 2D game engine optimized for pixel art games. It features a user-friendly visual editor, supports scripting with GDScript, and allows for cross-platform exports. Designed for simplicity and accessibility, it is ideal for indie developers working on pixel-based games.",
+    "blender:paragraph": "Blender is a free, open-source 3D creation suite that offers powerful tools for modeling, animation, rendering, sculpting, texturing, and video editing. It includes advanced features for simulations and scripting, and is available on Linux, macOS, and Windows. Blender is renowned for its versatility and strong community support.",
+    "gimp:paragraph": "GIMP, which stands for GNU Image Manipulation Program, is a free and open-source graphics editor used for tasks such as photo retouching, image composition, and image authoring. It&asp;s often compared to Adobe Photoshop due to its similar capabilities, including layers, filters, and various editing tools. GIMP supports a wide range of file formats and is popular among both amateur and professional graphic designers for its powerful features and customizability."
+  },
+
+  "Games": {
+    "title:games": "Our games!"
+  },
+
+  "Card": {
+    "text:coming_soon": "Coming soon!"
+  },
+
+  "Extension": {
+    "title:extension": "Search for game discounts?",
+    "subtitle:extension": "Add our discount wishlist extension!",
+    "paragraph": "Our extension makes easy to know whenever the games that you want to buy is in discount. More than that, you got notified to get limited time free games!",
+    "callToAction": "Get it on <icon></icon> (Come soon!)"
+  },
+
+  "About_us": {
+    "title:about_us": "About us",
+    "paragraph:1": "Hi there! I&apos;m Douglas Guimarães, and I&pos;m thrilled to introduce you to Finituz, our new indie game studio that officially launched in 2024. At Finituz, we&apos;re passionate about pushing the boundaries of game development, and we&apos;re doing it with a suite of fantastic tools: Godot Engine, GIMP, Pixelorama, and Blender. I can&apos;t wait to share more about what we’re creating and how we&apos;re doing things a bit differently.",
+    "subtitle:2": "Our Vision and Future",
+    "paragraph:2": "At Finituz, we&apos;re all about collaboration and innovation. By using Godot, GIMP, Pixelorama, and Blender, we&apos;re not just enhancing our own development process but also contributing to the broader indie game community. We believe in pushing the envelope of what indie games can achieve, and our team is dedicated to exploring new ideas and technologies.",
+    "paragraph:3": "Looking ahead, we&apos;re excited about the possibilities that lie before us. Our commitment to these tools and our passion for game development are driving us to create something truly special. For everyone who&apos;s interested in indie gaming, we invite you to join us on this journey.",
+    "subtitle:4": "Stay Connected",
+    "paragraph:4": "To keep up with our latest news, updates, and behind-the-scenes glimpses, be sure to subscribe to our newsletter. And don&apos;t miss out on the conversation—follow us on Discord, Reddit, and LinkedIn to engage with our community and be part of our exciting adventure.",
+    "paragraph:5": "Thank you for being part of our story. We look forward to connecting with you and sharing the amazing things we have in store!",
+    "author_name": "Douglas Guimarães",
+    "douglas:team_role": "Founder",
+    "title:team": "Our <important>bloody</important> team:"
   },
 
   "Footer": {
