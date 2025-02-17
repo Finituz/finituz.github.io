@@ -3,9 +3,11 @@ import { ReactNode, useEffect } from "react";
 export default function Slide({
   children,
   id,
+  className,
 }: {
   children: ReactNode;
   id: string;
+  className?: string;
 }) {
   let count: number = 0;
 
@@ -48,7 +50,7 @@ export default function Slide({
       </button>
       <span
         id={id}
-        className="flex gap-20 pl-7 text-justify items-center md:flex-col"
+        className={"flex gap-20 pl-7 text-justify items-center " + className}
       >
         {children}
       </span>

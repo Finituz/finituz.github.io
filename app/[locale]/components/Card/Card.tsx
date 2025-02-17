@@ -29,6 +29,8 @@ export default function Card({
 
       <Image
         src={imagePath}
+        width={300}
+        height={150}
         alt={imageAlt}
         className="w-full h-full rounded-md"
       />

@@ -87,14 +87,13 @@ export default function Home() {
           </span>
           &#8287;{t("Techs.title:techs:4")}
         </h1>
-
         <Table className="lg:w-fit">
           <div className="flex gap-5 md:w-fit">
             <RiInformationFill className="text-4xl animate-pulse text-orange-400 duration-500" />
             {t("Techs.tip")}
           </div>
         </Table>
-        <Slide id="tecnologies-wrapper">
+        <Slide id="tecnologies-wrapper" className="md:flex-col">
           <InfoTable
             iconSrc={godot}
             href="https://godotengine.org/"

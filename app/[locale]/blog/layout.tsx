@@ -5,18 +5,18 @@ import { routing } from "@/i18n/routing";
 
 import type { Metadata } from "next";
 import { Pixelify_Sans } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import GoUp from "./components/GoUp/GoUp";
-import ChangeLanguage from "./components/ChangeLanguage/ChangeLanguage";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import GoUp from "../components/GoUp/GoUp";
+import ChangeLanguage from "../components/ChangeLanguage/ChangeLanguage";
 
 const font = Pixelify_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Finituz Game Studio",
-  description: "The official Finituz game studio website.",
+  title: "Finituz blog",
+  description: "The official Finituz game studio blog website.",
 };
 
 export default async function LocaleLayout({

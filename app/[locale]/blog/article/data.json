@@ -1,0 +1,14 @@
+[
+  {
+    "title": "how to break a linux os",
+    "path": "/articles/linux.md",
+    "thumbnail": "/imgs/articles/linuxx.png",
+    "thumbnailAlt": "Penguim image",
+    "createdAt": "2025-02-16 15:30",
+    "lastModified": "2025-02-16",
+    "likes": 2,
+    "dislikes": 0,
+    "comments": [],
+    "tags": ["linux"]
+  }
+]

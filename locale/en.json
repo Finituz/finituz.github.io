@@ -1,5 +1,7 @@
 {
   "Header": {
+    "blog": "Blog",
+    "game_site": "Game site",
     "our_games": "Our games",
     "about_us": "About us",
     "extension": "Promogame extension"

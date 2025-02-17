@@ -14,7 +14,12 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "react-typed": "^2.0.12"
+    "react-markdown": "^9.0.3",
+    "react-typed": "^2.0.12",
+    "remark-parse": "^11.0.0",
+    "remark-react": "^9.0.1",
+    "to-vfile": "^8.0.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@types/node": "^20",
