@@ -60,10 +60,6 @@ export default function Game() {
         soon as you pay our new monthly
         <strong className="text-red-900"> BATTLEPASS </strong>!!!
       </p>
-
-
     </>
-
-
   );
 }

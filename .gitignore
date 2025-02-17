@@ -37,3 +37,6 @@ next-env.d.ts
 
 #ignore changes 
 next.config.mjs
+
+# ignore game page 
+/app/[locale]/components/Game/

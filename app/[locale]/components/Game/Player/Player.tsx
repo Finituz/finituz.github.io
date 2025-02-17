@@ -1,4 +1,4 @@
-import BulletController from "@/app/components/Game/BulletController/BulletController";
+import BulletController from "../BulletController/BulletController";
 
 export default class Player {
   velocity: { x: number; y: number };
