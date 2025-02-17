@@ -4,10 +4,6 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n: {
-    locales: ["br", "en", "es"], // Add your default language and other languages
-    defaultLocale: "en", // Set the default language
-  },
   /**
    * Enable static exports for the App Router.
    *
