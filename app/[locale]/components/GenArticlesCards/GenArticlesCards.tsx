@@ -1,12 +1,6 @@
 import Card from "@/app/[locale]/components/Card/Card";
 import { RiSearchLine } from "react-icons/ri";
-import {
-  ChangeEventHandler,
-  ReactElement,
-  use,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, ReactElement, useState } from "react";
 import Link from "next/link";
 
 interface dataInterface {
@@ -20,7 +14,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const [searchValue, setSearch] = useState("");
   const [filteredData, setFilter] = useState(data);
 
-  const onSearch = (event: ChangeEventHandler) => {
+  const onSearch = (event: ChangeEvent<HTMLInputElement>) => {
     let searchInput: string = event.target.value;
 
     setSearch(searchInput);
