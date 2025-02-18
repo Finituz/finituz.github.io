@@ -1,21 +1,15 @@
 "use client";
+
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import Markdown from "react-markdown";
 import ArticleIsland from "../../components/ArticleIsland/ArticleIsland";
 
-export const dynamic = "force-dynamic";
-
-export default function Page({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) {
+export default function Page() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
     const header = document.querySelector("#article-header") as HTMLHtmlElement;
-
+    const searchParams = { path: "", thumbnail: "" }; // test
     const path = searchParams?.path;
     const thumbnail = searchParams?.thumbnail;
     header.style.backgroundImage = `url(${thumbnail})`;
