@@ -6,20 +6,22 @@ import ArticleIsland from "../../components/ArticleIsland/ArticleIsland";
 
 export const dynamic = "force-dynamic";
 
-export default function Page() {
-  // const { content, thumbnail, path } = await params;
+export default function Page({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   const [content, setContent] = useState("");
-  const searchParams = useSearchParams();
-
-  const path = searchParams.get("path") || "";
-  const thumbnail = searchParams.get("thumbnail") || "";
 
   useEffect(() => {
     const header = document.querySelector("#article-header") as HTMLHtmlElement;
+
+    const path = searchParams?.path;
+    const thumbnail = searchParams?.thumbnail;
     header.style.backgroundImage = `url(${thumbnail})`;
 
     const result = async () => {
-      await fetch(path)
+      await fetch(`${path}`)
         .then((res) => res.text())
         .then((res) => setContent(res));
     };
