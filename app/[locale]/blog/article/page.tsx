@@ -1,28 +1,25 @@
 "use client";
+import { useEffect, useState } from "react";
 import Article from "./article";
 
 import { useSearchParams } from "next/navigation";
-// export async function generateStaticParams(params: {
-//   path: string;
-//   thumbnail: string;
-// }) {
-//   const res = await fetch(params.path);
-//   const content = await res.text().then((content) => content);
-//
-//   console.log("thumbnail: ", params.thumbnail);
-//   console.log("path: ", params.path);
-//   return { content: content, thumbnail: params.thumbnail, path: params.path };
-// }
 
 export default function Page() {
   // const { content, thumbnail, path } = await params;
+  const [content, setContent] = useState("");
   const searchParams = useSearchParams();
 
-  return (
-    <Article
-      content=""
-      thumbnail={searchParams.get("thumbnail") || ""}
-      path={searchParams.get("path") || ""}
-    />
-  );
+  const path = searchParams.get("path") || "";
+  const thumbnail = searchParams.get("thumbnail") || "";
+
+  useEffect(() => {
+    const result = async () => {
+      await fetch(path)
+        .then((res) => res.text())
+        .then((res) => setContent(res));
+    };
+
+    result();
+  });
+  return <Article content={content} thumbnail={thumbnail} path={path} />;
 }
