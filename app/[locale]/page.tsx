@@ -23,6 +23,8 @@ import douglas from "@/public/imgs/team/douglas_guimaraes.png";
 import Slide from "./components/Slide/Slide";
 import { useTranslations } from "next-intl";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   const t = useTranslations();
 
