@@ -1,8 +1,8 @@
 "use client";
-
 import { useEffect, useState } from "react";
-import Article from "./article";
 import { useSearchParams } from "next/navigation";
+import Markdown from "react-markdown";
+import ArticleIsland from "../../components/ArticleIsland/ArticleIsland";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +15,9 @@ export default function Page() {
   const thumbnail = searchParams.get("thumbnail") || "";
 
   useEffect(() => {
+    const header = document.querySelector("#article-header") as HTMLHtmlElement;
+    header.style.backgroundImage = `url(${thumbnail})`;
+
     const result = async () => {
       await fetch(path)
         .then((res) => res.text())
@@ -23,5 +26,18 @@ export default function Page() {
 
     result();
   });
-  return <Article content={content} thumbnail={thumbnail} path={path} />;
+
+  return (
+    <main>
+      <section className="flex flex-col text-justify overflow-scroll items-center justify-center gap-10">
+        <header id="article-header" className="w-screen h-96"></header>
+        <article className="w-1/2">
+          <Markdown>
+            {content.length > 0 ? content : "Article could not be found."}
+          </Markdown>
+        </article>
+      </section>
+      <ArticleIsland />
+    </main>
+  );
 }
