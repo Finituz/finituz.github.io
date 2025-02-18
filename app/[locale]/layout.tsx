@@ -12,12 +12,18 @@ import Footer from "./components/Footer/Footer";
 import GoUp from "./components/GoUp/GoUp";
 import ChangeLanguage from "./components/ChangeLanguage/ChangeLanguage";
 
+import { locales } from "@/i18n/routing";
+
 const font = Pixelify_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Finituz Game Studio",
   description: "The official Finituz game studio website.",
 };
+
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export default async function LocaleLayout({
   children,
