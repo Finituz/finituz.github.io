@@ -4,6 +4,8 @@ import Article from "./article";
 
 import { useSearchParams } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function Page() {
   // const { content, thumbnail, path } = await params;
   const [content, setContent] = useState("");

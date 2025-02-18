@@ -8,6 +8,8 @@ import Slide from "../components/Slide/Slide";
 import GenArticles from "../components/GenArticlesCards/GenArticlesCards";
 import articlesData from "./article/data.json";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   const t = useTranslations();
 
