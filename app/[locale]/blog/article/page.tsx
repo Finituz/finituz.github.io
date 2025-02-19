@@ -3,20 +3,21 @@
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import ArticleIsland from "../../components/ArticleIsland/ArticleIsland";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
+// import { useSearchParams } from "next/navigation";
 
 export default function Page() {
   const [content, setContent] = useState("");
-  const searchParams = useSearchParams();
-  const path = searchParams.get("path") || "";
-  const thumbnail = searchParams.get("thumbnail") || "";
+  const router = useRouter();
+  const path = router.query.path;
+  const thumbnail = router.query.thumbnail;
 
   useEffect(() => {
     const header = document.querySelector("#article-header") as HTMLHtmlElement;
     header.style.backgroundImage = `url(${thumbnail})`;
 
     const result = async () => {
-      await fetch(path)
+      await fetch(`${path}`)
         .then((res) => res.text())
         .then((res) => setContent(res));
     };
