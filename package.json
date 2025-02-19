@@ -18,6 +18,7 @@
     "react-typed": "^2.0.12",
     "remark-parse": "^11.0.0",
     "remark-react": "^9.0.1",
+    "sharp": "^0.33.5",
     "to-vfile": "^8.0.0",
     "unified": "^11.0.5"
   },
