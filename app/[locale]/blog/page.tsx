@@ -44,7 +44,9 @@ export default function Home() {
           <span className="absolute top-10">v</span>
         </div>
       </section>
-      <section>{/* <GenArticles data={articlesData} /> */}</section>
+      <section>
+        <GenArticles data={articlesData} />
+      </section>
     </main>
   );
 }
