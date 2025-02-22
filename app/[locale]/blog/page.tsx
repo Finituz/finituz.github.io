@@ -5,7 +5,7 @@ import Link from "next/link";
 import Card from "../components/Card/Card";
 import { useTranslations } from "next-intl";
 import Slide from "../components/Slide/Slide";
-import GenArticles from "../components/GenArticlesCards/GenArticlesCards";
+import GenArticles from "../components/blog/GenArticlesCards/GenArticlesCards";
 import articlesData from "./article/data.json";
 
 export default function Home() {

@@ -4,7 +4,7 @@ import {
   RiThumbDownLine,
   RiThumbUpLine,
 } from "react-icons/ri";
-import Notification from "../Notification/Notification";
+import Notification from "../../Notification/Notification";
 import { useState } from "react";
 
 export default function ArticleIsland() {

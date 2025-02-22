@@ -2,7 +2,7 @@
 
 import { useEffect, useState, Suspense } from "react"; // Import Suspense
 import Markdown from "react-markdown";
-import ArticleIsland from "../../components/ArticleIsland/ArticleIsland";
+import ArticleIsland from "../../components/blog/ArticleIsland/ArticleIsland";
 import { useSearchParams } from "next/navigation";
 import Lantern from "../../components/Lantern/Lantern";
 
