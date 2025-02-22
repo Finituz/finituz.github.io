@@ -6,6 +6,7 @@ export const locales = ["br", "en"];
 export const routing = defineRouting({
   // A list of all locales that are supported
   locales: locales,
+  localPrefix: "as-needed",
 
   // Used when no locale matches
   defaultLocale: locales[1],
