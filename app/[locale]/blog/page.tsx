@@ -9,7 +9,7 @@ import GenArticles from "../components/blog/GenArticlesCards/GenArticlesCards";
 import articlesData from "./article/data.json";
 
 export default function Home() {
-  const t = useTranslations();
+  const t = useTranslations("Blog");
 
   return (
     <main className="flex min-h-screen overflow-x-hidden w-full flex-col items-center justify-between">
@@ -17,7 +17,7 @@ export default function Home() {
         id="home"
         className="flex flex-col items-center justify-center gap-10 h-screen text-center"
       >
-        <h1 className="text-7xl my-10 ">Destaques da semana!</h1>
+        <h1 className="text-7xl my-10 ">{t("title:hightlights-week")}</h1>
         <Slide
           id="tecnologies-wrapper"
           className="w-full justify-center items-center"
@@ -39,13 +39,14 @@ export default function Home() {
               </Link>
             ))}
         </Slide>
+        <Lantern className="top-56 left-0 -translate-x-1/2" />
         <div className="flex relative flex-col top-24 text-7xl animate-bounce">
           <span>v</span>
           <span className="absolute top-10">v</span>
         </div>
       </section>
-      <section>
-        <h1 className="text-7xl mb-20">Novidades</h1>
+      <section id="highlight">
+        <h1 className="text-7xl mb-20">{t("title:news")}</h1>
         {articlesData.map((data, key) => {
           const currentDate = new Date();
           const createdAt = new Date(data.createdAt);
@@ -70,9 +71,12 @@ export default function Home() {
             );
           }
         })}
+
+        <Lantern className="bottom-56 right-0 -translate-x-1/2" />
       </section>
       <section>
         <GenArticles data={articlesData} />
+        <Lantern className="top-56 left-0 -translate-x-1/2" />
       </section>
     </main>
   );

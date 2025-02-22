@@ -5,12 +5,14 @@ import Markdown from "react-markdown";
 import ArticleIsland from "../../components/blog/ArticleIsland/ArticleIsland";
 import { useSearchParams } from "next/navigation";
 import Lantern from "../../components/Lantern/Lantern";
+import { useTranslations } from "next-intl";
 
 function ArticleContent() {
   const searchParams = useSearchParams();
   const path = searchParams.get("path");
   const thumbnail = searchParams.get("thumbnail");
 
+  const t = useTranslations("Blog");
   const [content, setContent] = useState("");
 
   useEffect(() => {
@@ -23,18 +25,16 @@ function ArticleContent() {
       fetch(path)
         .then((res) => res.text())
         .then((res) => setContent(res))
-        .catch(() => setContent("Article could not be found."));
+        .catch(() => setContent(t("error:not-found")));
     }
-  }, [path, thumbnail]);
+  }, [path, thumbnail, t]);
 
   return (
     <main>
       <section className="flex flex-col text-justify overflow-scroll items-center justify-center gap-10">
         <header id="article-header" className="w-screen h-96"></header>
         <article className="w-1/2">
-          <Markdown>
-            {content.length > 0 ? content : "Article could not be found."}
-          </Markdown>
+          <Markdown>{content}</Markdown>
         </article>
         <Lantern className="top-56 left-0 -translate-x-1/2" />
       </section>
