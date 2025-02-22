@@ -15,7 +15,7 @@ export default function Home() {
     <main className="flex min-h-screen overflow-x-hidden w-full flex-col items-center justify-between">
       <section
         id="home"
-        className="flex flex-col items-center justify-center gap-10 h-screen"
+        className="flex flex-col items-center justify-center gap-10 h-screen text-center"
       >
         <h1 className="text-7xl my-10 ">Destaques da semana!</h1>
         <Slide
@@ -43,6 +43,33 @@ export default function Home() {
           <span>v</span>
           <span className="absolute top-10">v</span>
         </div>
+      </section>
+      <section>
+        <h1 className="text-7xl mb-20">Novidades</h1>
+        {articlesData.map((data, key) => {
+          const currentDate = new Date();
+          const createdAt = new Date(data.createdAt);
+          const timeDiff =
+            currentDate.getMonth() == createdAt.getMonth() &&
+            currentDate.getDate() - createdAt.getDate() < 7;
+
+          if (timeDiff) {
+            return (
+              <Link
+                href={`blog/article?title=${data.title}&path=${data.path}&thumbnail=${data.thumbnail}`}
+                key={key}
+              >
+                <Card
+                  key={key}
+                  title={data.title}
+                  imagePath={data.thumbnail}
+                  imageAlt={data.thumbnailAlt}
+                  isReleased
+                />
+              </Link>
+            );
+          }
+        })}
       </section>
       <section>
         <GenArticles data={articlesData} />

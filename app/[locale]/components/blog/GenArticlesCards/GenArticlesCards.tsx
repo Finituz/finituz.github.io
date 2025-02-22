@@ -13,10 +13,9 @@ interface dataInterface {
 export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const [searchValue, setSearch] = useState("");
   const [filteredData, setFilter] = useState(data);
+  let tagsList: Array<string> = [];
 
-  const onSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    let searchInput: string = event.target.value;
-
+  const onSearch = (searchInput: string) => {
     setSearch(searchInput);
 
     const filteredItems = data.filter(
@@ -50,6 +49,20 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
     );
   });
 
+  filteredData.map(({ tags }) => {
+    tags.map((tag) => tagsList.push(tag));
+  });
+
+  const createTags = tagsList.map((tag, key) => {
+    if (tagsList.indexOf(tag) == key) {
+      return (
+        <div onClick={() => onSearch(tag)} className="cursor-pointer" key={key}>
+          {tag}
+        </div>
+      );
+    }
+  });
+
   return (
     <>
       <div className="relative my-10">
@@ -59,8 +72,14 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
           placeholder="search..."
           value={searchValue}
           type="text"
-          onChange={onSearch}
+          onChange={(event) => onSearch(event.target.value)}
         />
+      </div>
+      <div className="flex flex-col gap-5 text-center w-1/2">
+        <strong className="text-5xl">Categorias</strong>
+        <div className="flex border-2 p-2 rounded-xl border-white gap-5 overflow-x">
+          {createTags}
+        </div>
       </div>
       <div
         id="blog-articles"
