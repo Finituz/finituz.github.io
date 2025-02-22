@@ -1,7 +1,8 @@
 import Card from "@/app/[locale]/components/Card/Card";
 import { RiSearchLine } from "react-icons/ri";
-import { ChangeEvent, ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface dataInterface {
   title: string;
@@ -14,6 +15,8 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const [searchValue, setSearch] = useState("");
   const [filteredData, setFilter] = useState(data);
   let tagsList: Array<string> = [];
+
+  const t = useTranslations("Blog");
 
   const onSearch = (searchInput: string) => {
     setSearch(searchInput);
@@ -69,15 +72,15 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
         <RiSearchLine className="absolute top-1/2 transform -translate-y-1/2 left-2" />
         <input
           className="pl-10 bg-black border-2 border-white rounded-xl p-2"
-          placeholder="search..."
+          placeholder={t("placeholder:search")}
           value={searchValue}
           type="text"
           onChange={(event) => onSearch(event.target.value)}
         />
       </div>
       <div className="flex flex-col gap-5 text-center w-1/2">
-        <strong className="text-5xl">Categorias</strong>
-        <div className="flex border-2 p-2 rounded-xl border-white gap-5 overflow-x">
+        <strong className="text-5xl">{t("title:categories")}</strong>
+        <div className="flex bg-red-900 border-2 p-2 rounded-xl border-white gap-5 overflow-x">
           {createTags}
         </div>
       </div>

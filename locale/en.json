@@ -39,6 +39,18 @@
   "Card": {
     "text:coming_soon": "Coming soon!"
   },
+  "Newsletter": {
+    "label:email": "Email: ",
+    "placeholder:email": "Your best email...",
+    "button:subscribe": "Subscribe!"
+  },
+  "Blog": {
+    "title:categories": "Categories",
+    "placeholder:search": "Search...",
+    "title:hightlights-week": "Hightlights of the week",
+    "title:news": "News!",
+    "error:not-found": "Article could not be found."
+  },
 
   "Extension": {
     "title:extension": "Search for game discounts?",
