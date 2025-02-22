@@ -32,7 +32,7 @@ export default function Home() {
                 <Card
                   key={key}
                   title={data.title}
-                  imagePath={"/en" + data.thumbnail}
+                  imagePath={data.thumbnail}
                   imageAlt={data.thumbnailAlt}
                   isReleased
                 />

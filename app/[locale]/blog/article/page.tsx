@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react"; // Import Suspense
 import Markdown from "react-markdown";
 import ArticleIsland from "../../components/ArticleIsland/ArticleIsland";
 import { useSearchParams } from "next/navigation";
+import Lantern from "../../components/Lantern/Lantern";
 
 function ArticleContent() {
   const searchParams = useSearchParams();
@@ -35,6 +36,7 @@ function ArticleContent() {
             {content.length > 0 ? content : "Article could not be found."}
           </Markdown>
         </article>
+        <Lantern className="top-56 left-0 -translate-x-1/2" />
       </section>
       <ArticleIsland />
     </main>
