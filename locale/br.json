@@ -39,6 +39,13 @@
   "Card": {
     "text:coming_soon": "Em breve!"
   },
+  "Blog": {
+    "title:categories": "Categorias",
+    "placeholder:search": "Pesquisar...",
+    "title:hightlights-week": "Destaques da semana",
+    "title:news": "Novidades!",
+    "error:not-found": "Não encontramos esse artigo."
+  },
 
   "Extension": {
     "title:extension": "Procurando descontos em jogos?",
