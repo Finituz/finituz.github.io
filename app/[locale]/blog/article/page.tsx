@@ -1,29 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react"; // Import Suspense
 import Markdown from "react-markdown";
 import ArticleIsland from "../../components/ArticleIsland/ArticleIsland";
-import { useRouter } from "next/router";
-// import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
-export default function Page() {
+function ArticleContent() {
+  const searchParams = useSearchParams();
+  const path = searchParams.get("path");
+  const thumbnail = searchParams.get("thumbnail");
+
   const [content, setContent] = useState("");
-  const router = useRouter();
-  const path = router.query.path;
-  const thumbnail = router.query.thumbnail;
 
   useEffect(() => {
-    const header = document.querySelector("#article-header") as HTMLHtmlElement;
-    header.style.backgroundImage = `url(${thumbnail})`;
+    const header = document.querySelector("#article-header") as HTMLElement;
+    if (thumbnail) {
+      header.style.backgroundImage = `url(${thumbnail})`;
+    }
 
-    const result = async () => {
-      await fetch(`${path}`)
+    if (path) {
+      fetch(path)
         .then((res) => res.text())
-        .then((res) => setContent(res));
-    };
-
-    result();
-  });
+        .then((res) => setContent(res))
+        .catch(() => setContent("Article could not be found."));
+    }
+  }, [path, thumbnail]);
 
   return (
     <main>
@@ -37,5 +38,13 @@ export default function Page() {
       </section>
       <ArticleIsland />
     </main>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <ArticleContent />
+    </Suspense>
   );
 }
