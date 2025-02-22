@@ -42,7 +42,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
         <Card
           key={key}
           title={data.title}
-          imagePath={"/en" + data.thumbnail}
+          imagePath={data.thumbnail}
           imageAlt={data.thumbnailAlt}
           isReleased
         />
