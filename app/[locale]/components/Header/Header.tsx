@@ -47,7 +47,7 @@ export default function Header() {
   );
 
   const blogSiteLogo = () => (
-    <a href="/blog#home" className="flex gap-2 justify-center items-center">
+    <a href="/blog" className="flex gap-2 justify-center items-center">
       <Image src={Logo} width={32} height={32} alt="Finituz's logo" />
       <strong>Finituz {t("blog")}</strong>
     </a>
