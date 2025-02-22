@@ -4,11 +4,11 @@
     "path": "/articles/linux.md",
     "thumbnail": "/imgs/articles/linuxx.png",
     "thumbnailAlt": "Penguim image",
-    "createdAt": "2025-02-16 15:30",
+    "createdAt": "2025-02-17",
     "lastModified": "2025-02-16",
     "likes": 2,
     "dislikes": 0,
     "comments": [],
-    "tags": ["linux"]
+    "tags": ["linux", "tecnologia"]
   }
 ]
