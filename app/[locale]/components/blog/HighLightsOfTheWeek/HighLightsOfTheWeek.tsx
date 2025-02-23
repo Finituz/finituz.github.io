@@ -11,13 +11,14 @@ export default function HighLightsOfTheWeek({
   return (
     <Slide
       id="hightlights-wrapper"
-      buttonLeftClass="left-16 top-1/2 transform -translate-y-1/2"
-      buttonRightClass="right-16 top-1/2 transform -translate-y-1/2"
+      buttonLeftClass="left-8 top-1/2 transform -translate-y-1/2"
+      buttonRightClass="right-8 top-1/2 transform -translate-y-1/2"
     >
       {articlesData
         .filter((data) => (data.likes > 0 ? data : null))
         .map((data, key) => (
           <Link
+            className="flex items-center justify-center"
             href={`blog/article?title=${data.title}&path=${data.path}&thumbnail=${data.thumbnail}`}
             key={key}
           >

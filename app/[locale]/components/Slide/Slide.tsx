@@ -78,9 +78,7 @@ export default function Slide({
       <span
         id={id}
         ref={wrapper}
-        className={
-          "flex w-fit gap-20 pl-7 text-justify items-center " + className
-        }
+        className={"flex text-justify items-center justify-center " + className}
       >
         {children}
       </span>

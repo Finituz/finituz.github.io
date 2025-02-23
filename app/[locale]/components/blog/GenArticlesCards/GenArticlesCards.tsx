@@ -72,9 +72,9 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
           onChange={(event) => onSearch(event.target.value)}
         />
       </div>
-      <div className="flex flex-col gap-5 text-center w-1/2">
-        <strong className="text-5xl">{t("title:categories")}</strong>
-        <div className="flex bg-red-900 border-2 p-2 rounded-xl border-white gap-5 overflow-x">
+      <div className="flex flex-col gap-5 justify-center items-center text-center md:w-1/2 px-2 w-full">
+        <p className="text-5xl">{t("title:categories")}</p>
+        <div className="flex bg-red-900 border-2 p-2 rounded-xl w-full border-white gap-5 overflow-x">
           {createTags}
         </div>
       </div>

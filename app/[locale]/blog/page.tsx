@@ -12,12 +12,12 @@ export default function Home() {
   const t = useTranslations("Blog");
 
   return (
-    <main className="flex min-h-screen overflow-x-hidden w-full flex-col items-center justify-between mt-20">
+    <main className="flex min-h-screen w-full flex-col items-center justify-between">
       <section
         id="home"
-        className="flex flex-col items-center justify-center gap-10 h-screen text-center"
+        className="flex flex-col items-center justify-center gap-10 h-fit text-center"
       >
-        <h1 className="text-7xl mt-32">{t("title:hightlights-week")}</h1>
+        <h1 className="text-7xl">{t("title:hightlights-week")}</h1>
         <p className="text-justify px-5">{t("subtitle:hightlights-week")}</p>
         <HighLightsOfTheWeek articlesData={articlesData} />
         <Lantern className="top-56 left-0 -translate-x-1/2" />
@@ -26,7 +26,6 @@ export default function Home() {
           <span className="absolute top-10">v</span>
         </div>
       </section>
-      <section></section>
       <section id="highlight">
         <h1 className="text-7xl mb-20">{t("title:news")}</h1>
         <p className="text-justify px-5">{t("subtitle:news")}</p>
