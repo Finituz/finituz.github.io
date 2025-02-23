@@ -17,7 +17,7 @@ export default function Card({
 
   return (
     <Table
-      className="relative text-center overflow-hidden hover:scale-110 transition-all hover:shadow-neon duration-500 w-fit"
+      className="relative text-center overflow-hidden hover:scale-110 transition-all hover:shadow-neon duration-500 lg:w-80 h-96 "
       showTitle
       title={title}
     >

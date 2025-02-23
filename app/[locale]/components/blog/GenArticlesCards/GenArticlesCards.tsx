@@ -3,14 +3,8 @@ import { RiSearchLine } from "react-icons/ri";
 import { ReactElement, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { dataInterface } from "@/app/[locale]/config";
 
-interface dataInterface {
-  title: string;
-  path: string;
-  thumbnail: string;
-  thumbnailAlt: string;
-  tags: Array<string>;
-}
 export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const [searchValue, setSearch] = useState("");
   const [filteredData, setFilter] = useState(data);

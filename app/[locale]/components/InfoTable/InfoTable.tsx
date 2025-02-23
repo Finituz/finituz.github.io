@@ -21,7 +21,7 @@ export default function InfoTable({
   return (
     <div
       className={
-        `flex md:flex flex-col infotable z-10
+        `flex md:flex flex-col z-10
           cursor-pointer w-[90vw] items-center
           lg:justify-between ` + reverseClass
       }

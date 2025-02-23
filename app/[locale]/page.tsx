@@ -93,7 +93,12 @@ export default function Home() {
             {t("Techs.tip")}
           </div>
         </Table>
-        <Slide id="tecnologies-wrapper" className="md:flex-col">
+        <Slide
+          id="tecnologies-wrapper"
+          buttonLeftClass="left-16 top-10 transform"
+          buttonRightClass="right-16 top-10 transform"
+          className="md:flex-col"
+        >
           <InfoTable
             iconSrc={godot}
             href="https://godotengine.org/"
