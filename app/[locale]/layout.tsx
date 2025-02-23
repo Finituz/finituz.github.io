@@ -54,6 +54,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <GoogleAdsense pId="9376449764182229" />
+      </head>
       <body className={font.className + " text-xl text-white bg-black"}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
@@ -61,7 +64,6 @@ export default async function LocaleLayout({
           <ChangeLanguage />
           {children}
           <Footer />
-          <GoogleAdsense pId="9376449764182229" />
         </NextIntlClientProvider>
       </body>
     </html>
