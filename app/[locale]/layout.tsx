@@ -14,6 +14,7 @@ import ChangeLanguage from "./components/ChangeLanguage/ChangeLanguage";
 import { locales } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import GoogleAdsense from "./components/GoogleAdsense/GoogleAdsense";
+import ParticlesBG from "./components/ParticlesBG/ParticlesBG";
 
 const font = Pixelify_Sans({ subsets: ["latin"] });
 
@@ -58,7 +59,8 @@ export default async function LocaleLayout({
         <meta name="google-adsense-account" content="ca-pub-9376449764182229" />
         <GoogleAdsense pId="9376449764182229" />
       </head>
-      <body className={font.className + " text-xl text-white bg-black"}>
+      <body className={font.className + " text-xl text-white"}>
+        <ParticlesBG />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <GoUp />
