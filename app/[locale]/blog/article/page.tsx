@@ -33,7 +33,7 @@ function ArticleContent() {
     <main>
       <section className="flex flex-col text-left overflow-scroll items-center justify-center gap-10">
         <header id="article-header" className="w-screen h-96"></header>
-        <article className="w-full p-8 md:w-1/2">
+        <article className="w-full p-8 lg:w-1/2">
           <Markdown>{content}</Markdown>
           <Lantern className="bottom-0 left-0 -translate-x-1/2" />
           <Lantern className="bottom-28 right-0 -translate-x-1/2" />
