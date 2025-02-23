@@ -17,10 +17,11 @@ export default function Home() {
         id="home"
         className="flex flex-col items-center justify-center gap-10 h-screen text-center"
       >
-        <h1 className="text-7xl my-10 ">{t("title:hightlights-week")}</h1>
+        <h1 className="text-7xl my-10 mt-72 ">{t("title:hightlights-week")}</h1>
+        <p className="text-justify px-5">{t("subtitle:hightlights-week")}</p>
         <HighLightsOfTheWeek articlesData={articlesData} />
         <Lantern className="top-56 left-0 -translate-x-1/2" />
-        <div className="flex relative flex-col top-24 text-7xl animate-bounce">
+        <div className="flex relative flex-col top-0 text-7xl animate-bounce">
           <span>v</span>
           <span className="absolute top-10">v</span>
         </div>
@@ -28,10 +29,13 @@ export default function Home() {
       <section></section>
       <section id="highlight">
         <h1 className="text-7xl mb-20">{t("title:news")}</h1>
+        <p className="text-justify px-5">{t("subtitle:news")}</p>
         <News articlesData={articlesData} />
         <Lantern className="bottom-56 right-0 -translate-x-1/2" />
       </section>
       <section>
+        <h1 className="text-7xl mb-20">{t("title:explore")}</h1>
+        <p className="text-justify px-5">{t("subtitle:explore")}</p>
         <GenArticles data={articlesData} />
         <Lantern className="top-56 left-0 -translate-x-1/2" />
       </section>
