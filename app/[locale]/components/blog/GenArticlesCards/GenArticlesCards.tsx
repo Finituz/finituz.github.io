@@ -18,7 +18,8 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
     const filteredItems = data.filter(
       (metadata) =>
         metadata.tags.includes(searchValue) ||
-        metadata.title.includes(searchValue),
+        metadata.title.includes(searchValue) ||
+        searchInput == "",
     );
 
     setFilter(filteredItems);
@@ -46,7 +47,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
     );
   });
 
-  filteredData.map(({ tags }) => {
+  data.map(({ tags }) => {
     tags.map((tag) => tagsList.push(tag));
   });
 
