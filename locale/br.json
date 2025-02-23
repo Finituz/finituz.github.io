@@ -43,7 +43,11 @@
     "title:categories": "Categorias",
     "placeholder:search": "Pesquisar...",
     "title:hightlights-week": "Destaques da semana",
-    "title:news": "Novidades!",
+    "subtitle:hightlights-week": "Explore as atualizações, tendências e inovações mais emocionantes no mundo do Linux e do software de código aberto. Desde novos lançamentos e patches de segurança até tutoriais detalhados e projetos impulsionados pela comunidade, trazemos as histórias que mais importam para entusiastas e profissionais de tecnologia. Mantenha-se à frente com nossa seleção curada de artigos, análises e guias—sua fonte confiável para tudo relacionado a código aberto e Linux. Mergulhe e descubra o que está moldando o futuro da tecnologia esta semana!",
+    "title:news": "Notícias!",
+    "subtitle:news": "Mantenha-se informado com as atualizações, descobertas e desenvolvimentos mais importantes no mundo do Linux e do código aberto. Desde atualizações do kernel e lançamentos de software até destaques da comunidade e tendências do setor, trazemos as histórias que mais importam. Seja você um desenvolvedor, sysadmin ou entusiasta de tecnologia, nossa seção de notícias mantém você atualizado com análises detalhadas, opiniões de especialistas e relatórios oportunos. Não perca o que está impulsionando a inovação e moldando o futuro da tecnologia de código aberto esta semana!",
+    "title:explore": "Explore!",
+    "subtitle:explore": "Mergulhe em nossa poderosa seção de pesquisa e descubra os melhores recursos de Linux e código aberto adaptados às suas necessidades. Se você está procurando por tutoriais, recomendações de software, guias de solução de problemas ou as últimas notícias, nossa ferramenta de pesquisa intuitiva ajuda você a navegar pelo vasto mundo da tecnologia de código aberto com facilidade. Explore conteúdo curado, filtre por tópicos e descubra joias escondidas que combinam com seus interesses. Comece sua pesquisa hoje e desbloqueie o conhecimento que você precisa para levar sua experiência com Linux para o próximo nível!",
     "error:not-found": "Não encontramos esse artigo."
   },
 
