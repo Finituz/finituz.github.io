@@ -37,8 +37,9 @@ export default function ParticlesBG() {
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
+        zIndex: -1,
         color: {
-          value: "#000",
+          value: "transparent",
         },
       },
       fpsLimit: 120,

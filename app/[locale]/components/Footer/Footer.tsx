@@ -7,7 +7,7 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="bg-red-900 border-t-2 text-left text-2xl px-10 py-5">
+    <footer className="bg-red-900  border-t-2 text-left text-2xl px-10 py-5">
       <span className="flex flex-col md:gap-0 md:flex-row gap-5 justify-between">
         <div>
           <strong>{t("subtitle:social_medias")}</strong>

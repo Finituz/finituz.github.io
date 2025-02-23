@@ -59,7 +59,7 @@ export default async function LocaleLayout({
         <meta name="google-adsense-account" content="ca-pub-9376449764182229" />
         <GoogleAdsense pId="9376449764182229" />
       </head>
-      <body className={font.className + " text-xl text-white"}>
+      <body className={font.className + "  text-xl bg-black text-white"}>
         <ParticlesBG />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
