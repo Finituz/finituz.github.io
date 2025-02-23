@@ -55,6 +55,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-9376449764182229" />
         <GoogleAdsense pId="9376449764182229" />
       </head>
       <body className={font.className + " text-xl text-white bg-black"}>
