@@ -47,7 +47,7 @@ export default function ArticleIsland() {
     <>
       <div
         onClick={ToggleIsland}
-        className="flex fixed w-fit bg-red-900  transition-all duration-500 left-2 top-1/2 transform -translate-y-1/2 border border-white rounded-lg"
+        className="flex -z-1 fixed w-fit bg-red-900  transition-all duration-500 left-2 top-1/2 transform -translate-y-1/2 border border-white rounded-lg"
       >
         <div className="flex flex-col gap-5 p-5 pr-2">
           <span className="cursor-pointer hover:bg-red-400 transition-colors duration-500 rounded-xl p-2">

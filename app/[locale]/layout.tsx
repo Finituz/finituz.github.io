@@ -61,7 +61,8 @@ export default async function LocaleLayout({
       </head>
       <body
         className={
-          font.className + "  relative pb-64 text-xl bg-black text-white"
+          font.className +
+          "  relative pb-[600px] md:pb-64 text-xl bg-black text-white"
         }
       >
         <ParticlesBG />
