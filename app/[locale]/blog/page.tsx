@@ -17,7 +17,7 @@ export default function Home() {
         id="home"
         className="flex flex-col items-center justify-center gap-10 h-screen text-center"
       >
-        <h1 className="text-7xl my-10 mt-72 ">{t("title:hightlights-week")}</h1>
+        <h1 className="text-7xl pt-72">{t("title:hightlights-week")}</h1>
         <p className="text-justify px-5">{t("subtitle:hightlights-week")}</p>
         <HighLightsOfTheWeek articlesData={articlesData} />
         <Lantern className="top-56 left-0 -translate-x-1/2" />
