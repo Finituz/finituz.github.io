@@ -35,9 +35,12 @@ function ArticleContent() {
         <header id="article-header" className="w-screen h-96"></header>
         <article className="w-full p-8 md:w-1/2">
           <Markdown>{content}</Markdown>
+          <Lantern className="bottom-0 left-0 -translate-x-1/2" />
+          <Lantern className="bottom-28 right-0 -translate-x-1/2" />
         </article>
-        <Lantern className="top-56 left-0 -translate-x-1/2" />
+        <Lantern className="top-72 left-0 -translate-x-1/2" />
       </section>
+      <Lantern className="bottom-0 right-0 -translate-x-1/2" />
       <ArticleIsland />
     </main>
   );
