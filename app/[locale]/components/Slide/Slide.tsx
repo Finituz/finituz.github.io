@@ -41,13 +41,14 @@ export default function Slide({
 
     count = count < 0 ? wrapperChildrenLength : count;
 
-    wrapperChildren.forEach(
-      (child: ChildNode, index: number) =>
-        count == index
-          ? wrapperChildren[index].classList.remove("hidden")
-          : wrapperChildren[index].classList.add("hidden"),
-      setWrapperSlideCounter(),
-    );
+    wrapperChildren.forEach((child: ChildNode, index: number) => {
+      const wrapperChild = wrapperChildren[index] as HTMLDivElement;
+
+      count == index
+        ? wrapperChild.classList.remove("hidden")
+        : wrapperChild.classList.add("hidden"),
+        setWrapperSlideCounter();
+    });
 
     goBack ? count-- : count++;
 
