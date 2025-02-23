@@ -5,13 +5,18 @@ import {
   RiThumbUpLine,
 } from "react-icons/ri";
 import Notification from "../../Notification/Notification";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 
 export default function ArticleIsland() {
   const [notification, setNotification] = useState({
     title: "",
     message: "",
   });
+
+  const ToggleIsland = (event: MouseEvent) => {
+    event.stopPropagation();
+    (event.currentTarget as HTMLDivElement).classList.toggle("-left-16");
+  };
 
   const copyToShare = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -24,7 +29,10 @@ export default function ArticleIsland() {
   };
   return (
     <>
-      <div className="fixed flex flex-col bg-red-900 left-5 top-1/2 transform -translate-y-1/2 gap-5 border border-white rounded-lg p-5 ">
+      <div
+        onClick={ToggleIsland}
+        className="fixed flex flex-col bg-red-900  transition-all duration-500 left-2 -left-16 top-1/2 transform -translate-y-1/2 gap-5 border border-white rounded-lg p-5 "
+      >
         <span className="cursor-pointer hover:bg-red-400 transition-colors duration-500 rounded-xl p-2">
           <RiThumbUpLine />
         </span>

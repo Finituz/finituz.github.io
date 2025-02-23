@@ -12,7 +12,7 @@ export default function Home() {
   const t = useTranslations("Blog");
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-between">
+    <main className="flex min-h-screen w-full flex-col items-center px-8 justify-between">
       <section
         id="home"
         className="flex flex-col items-center justify-center gap-10 h-fit text-center"
