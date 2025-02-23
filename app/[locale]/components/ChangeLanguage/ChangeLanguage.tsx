@@ -2,11 +2,13 @@
 import { routing, usePathname } from "@/i18n/routing";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
 
-export default function ChangeLanguage() {
+function ChangeLanguage() {
   const [currentLanguage, setCurrentLanguage] = useState("");
   const currentPath = usePathname();
+  const currentQuery = useSearchParams();
   useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
 
   return (
@@ -32,14 +34,17 @@ export default function ChangeLanguage() {
             selected = "bg-red-500";
           }
 
-          console.log(loc, currentPath);
+          console.log(loc, currentPath, currentQuery);
 
           return (
             <li
               key={key}
               className={"flex hover:bg-red-500 p-2 rounded-xl " + selected}
             >
-              <Link href={`/${loc}/${currentPath}`} className="flex">
+              <Link
+                href={`/${loc}/${currentPath}?${currentQuery}`}
+                className="flex"
+              >
                 <Image
                   alt={loc + " flag"}
                   src={`/imgs/flags/${loc}.svg`}
@@ -54,5 +59,13 @@ export default function ChangeLanguage() {
         })}
       </ul>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <ChangeLanguage />
+    </Suspense>
   );
 }
