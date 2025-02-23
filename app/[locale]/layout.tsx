@@ -61,7 +61,7 @@ export default async function LocaleLayout({
           <ChangeLanguage />
           {children}
           <Footer />
-          <GoogleAdsense pId={process.env.GOOGLE_AD || ""} />
+          <GoogleAdsense pId="9376449764182229" />
         </NextIntlClientProvider>
       </body>
     </html>
