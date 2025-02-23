@@ -1,0 +1,11 @@
+# Allow all crawlers to access all parts of the site
+User-agent: *
+Disallow:
+
+# Alternatively, to disallow crawling of specific directories or pages:
+# User-agent: *
+# Disallow: /private/
+# Disallow: /temp/
+
+# Sitemap location (if you have a sitemap)
+Sitemap: https://www.finituz.com/sitemap.xml
