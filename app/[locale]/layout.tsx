@@ -13,6 +13,7 @@ import ChangeLanguage from "./components/ChangeLanguage/ChangeLanguage";
 
 import { locales } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
+import GoogleAdsense from "./components/GoogleAdsense/GoogleAdsense";
 
 const font = Pixelify_Sans({ subsets: ["latin"] });
 
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
           <ChangeLanguage />
           {children}
           <Footer />
+          <GoogleAdsense pId={process.env.GOOGLE_AD || ""} />
         </NextIntlClientProvider>
       </body>
     </html>
