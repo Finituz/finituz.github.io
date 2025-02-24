@@ -6,6 +6,8 @@ import ArticleIsland from "../../components/blog/ArticleIsland/ArticleIsland";
 import { useSearchParams } from "next/navigation";
 import Lantern from "../../components/Lantern/Lantern";
 import { useTranslations } from "next-intl";
+import remarkGfm from "remark-gfm";
+import remarkHTML from "remark-html";
 
 function ArticleContent() {
   const searchParams = useSearchParams();
@@ -22,7 +24,7 @@ function ArticleContent() {
     }
 
     if (path) {
-      fetch(path)
+      fetch(`${path}.md`)
         .then((res) => res.text())
         .then((res) => setContent(res))
         .catch(() => setContent(t("error:not-found")));
@@ -33,8 +35,8 @@ function ArticleContent() {
     <main>
       <section className="flex flex-col text-left overflow-scroll items-center justify-center gap-10">
         <header id="article-header" className="w-screen h-96"></header>
-        <article className="w-full p-8 lg:w-1/2">
-          <Markdown>{content}</Markdown>
+        <article id="remark" className="w-full p-8 lg:w-1/2">
+          <Markdown remarkPlugins={[remarkGfm, remarkHTML]}>{content}</Markdown>
           <Lantern className="bottom-0 left-0 -translate-x-1/2" />
           <Lantern className="bottom-28 right-0 -translate-x-1/2" />
         </article>

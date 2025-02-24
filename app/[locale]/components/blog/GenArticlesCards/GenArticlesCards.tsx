@@ -1,14 +1,17 @@
 import Card from "@/app/[locale]/components/Card/Card";
 import { RiSearchLine } from "react-icons/ri";
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { dataInterface } from "@/app/[locale]/config";
 
 export default function GenArticles({ data }: { data: Array<dataInterface> }) {
+  const [currentLanguage, setCurrentLanguage] = useState("");
   const [searchValue, setSearch] = useState("");
   const [filteredData, setFilter] = useState(data);
   let tagsList: Array<string> = [];
+
+  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
 
   const t = useTranslations("Blog");
 
@@ -18,7 +21,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
     const filteredItems = data.filter(
       (metadata) =>
         metadata.tags.includes(searchValue) ||
-        metadata.title.includes(searchValue) ||
+        metadata.title["en"].includes(searchValue) ||
         searchInput == "",
     );
 
@@ -33,12 +36,12 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const createArticles = filteredData.map((data, key): ReactElement => {
     return (
       <Link
-        href={`blog/article?title=${data.title}&path=${data.path}&thumbnail=${data.thumbnail}`}
+        href={`blog/article?title=${data.title[currentLanguage]}&path=${data.path}&thumbnail=${data.thumbnail}`}
         key={key}
       >
         <Card
           key={key}
-          title={data.title}
+          title={data.title[currentLanguage]}
           imagePath={data.thumbnail}
           imageAlt={data.thumbnailAlt}
           isReleased

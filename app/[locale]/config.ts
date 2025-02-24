@@ -1,5 +1,12 @@
+"use server";
+
+interface title {
+  en: string;
+  br: string;
+}
+
 export interface dataInterface {
-  title: string;
+  title: title;
   path: string;
   thumbnail: string;
   thumbnailAlt: string;

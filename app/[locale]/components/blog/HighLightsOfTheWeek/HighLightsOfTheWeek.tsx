@@ -2,12 +2,16 @@ import Slide from "../../Slide/Slide";
 import Card from "../../Card/Card";
 import { dataInterface } from "@/app/[locale]/config";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function HighLightsOfTheWeek({
   articlesData,
 }: {
   articlesData: Array<dataInterface>;
 }) {
+  const [currentLanguage, setCurrentLanguage] = useState("");
+
+  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
   return (
     <Slide
       id="hightlights-wrapper"
@@ -15,16 +19,16 @@ export default function HighLightsOfTheWeek({
       buttonRightClass="right-8 top-1/2 transform -translate-y-1/2"
     >
       {articlesData
-        .filter((data) => (data.likes > 0 ? data : null))
+        .filter((data) => (data.likes == 0 ? data : null))
         .map((data, key) => (
           <Link
             className="flex items-center justify-center"
-            href={`blog/article?title=${data.title}&path=${data.path}&thumbnail=${data.thumbnail}`}
+            href={`blog/article?title=${data.title[`${currentLanguage}`]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
             key={key}
           >
             <Card
               key={key}
-              title={data.title}
+              title={data.title[`${currentLanguage}`]}
               imagePath={data.thumbnail}
               imageAlt={data.thumbnailAlt}
               isReleased

@@ -26,9 +26,9 @@ export default function Home() {
           <span className="absolute top-10">v</span>
         </div>
       </section>
-      <section id="highlight">
+      <section id="news">
         <h1 className="text-7xl mb-20">{t("title:news")}</h1>
-        <p className="text-justify px-5">{t("subtitle:news")}</p>
+        <p className="text-justify px-5 pb-10">{t("subtitle:news")}</p>
         <News articlesData={articlesData} />
         <Lantern className="bottom-56 right-0 -translate-x-1/2" />
       </section>

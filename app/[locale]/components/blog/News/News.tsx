@@ -1,12 +1,16 @@
 import Card from "../../Card/Card";
 import { dataInterface } from "@/app/[locale]/config";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function News({
   articlesData,
 }: {
   articlesData: Array<dataInterface>;
 }) {
+  const [currentLanguage, setCurrentLanguage] = useState("");
+
+  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
   return articlesData.map((data, key) => {
     const currentDate = new Date();
     const createdAt = new Date(data.createdAt);
@@ -17,12 +21,12 @@ export default function News({
     if (timeDiff) {
       return (
         <Link
-          href={`blog/article?title=${data.title}&path=${data.path}&thumbnail=${data.thumbnail}`}
+          href={`blog/article?title=${data.title[currentLanguage]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
           key={key}
         >
           <Card
             key={key}
-            title={data.title}
+            title={data.title[currentLanguage]}
             imagePath={data.thumbnail}
             imageAlt={data.thumbnailAlt}
             isReleased

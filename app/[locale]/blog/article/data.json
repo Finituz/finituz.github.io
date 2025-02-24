@@ -1,12 +1,12 @@
 [
   {
-    "title": "how to break a linux os",
-    "path": "/articles/linux.md",
+    "title": { "en": "how to don't use linux", "br": "Como não usar linux" },
+    "path": "/articles/how_to_dont_use_linux",
     "thumbnail": "/imgs/articles/linuxx.png",
     "thumbnailAlt": "Penguim image",
-    "createdAt": "2025-02-17",
-    "lastModified": "2025-02-16",
-    "likes": 2,
+    "createdAt": "2025-02-23",
+    "lastModified": "2025-02-23",
+    "likes": 0,
     "dislikes": 0,
     "comments": [],
     "tags": ["linux", "tecnology"]

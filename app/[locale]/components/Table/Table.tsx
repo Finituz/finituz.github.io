@@ -20,9 +20,9 @@ export default function Table({
     >
       {showTitle ? (
         <header className="w-full" title={title}>
-          <h1 className="text-5xl">
-            {title && title.length > 15
-              ? title?.slice(0, 15).concat("...")
+          <h1 className="text-2xl">
+            {title && title.length > 25
+              ? title?.slice(0, 25).concat("...")
               : title}
           </h1>
           <hr className="border-2 border-white" />

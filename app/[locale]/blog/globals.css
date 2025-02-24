@@ -78,7 +78,7 @@ html {
   opacity: 1;
 }
 
-#highlight {
+#news {
   background: linear-gradient(
       45deg,
       transparent 49%,
@@ -139,4 +139,228 @@ section {
 ::-webkit-scrollbar-thumb:hover {
   background: #9c2828;
   cursor: pointer;
+}
+
+/* Remark Styling for Modern Dark Theme */
+
+/* The 'remark-all'-div contains the 'remark'-div and the 'remark-footer'-div */
+#remark-all {
+  /* Use sans-serif for readability */
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Limit the width of the content */
+  max-width: 40em;
+
+  /* Center content */
+  margin: auto;
+
+  /* Add padding */
+  padding: 0.5em;
+
+  /* Dark background with light text for better readability */
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Remark-generated content is contained in the 'remark'-div */
+#remark {
+  line-height: 1.6em;
+  min-height: 100vh;
+}
+
+/* Verbatim content */
+#remark pre {
+  font-family: "Consolas", "Inconsolata", monospace;
+  background-color: #333;
+  color: #b0b0b0;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+/* Paragraph */
+#remark p {
+  margin: 1em 0;
+}
+
+/* Emphasized text */
+#remark em {
+  color: #ffb74d;
+  font-style: italic;
+}
+
+/* Strong text */
+#remark strong {
+  color: #ffb74d;
+  font-weight: bold;
+}
+
+/* Inline code */
+#remark code {
+  color: #ffb74d;
+  background-color: #333;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+/* Style blockquote element */
+#remark blockquote {
+  background-color: rgba(129, 27, 27, 0.5); /* Light gray background */
+  border-left: 4px solid #e57373; /* Red left border */
+  padding: 0.2em; /* Padding for spacing inside */
+  margin: 1em 0; /* Space around the blockquote */
+  font-style: italic; /* Optional: Make text italic to mimic GitHub style */
+  border-radius: 5px; /* Rounded corners */
+  color: #333; /* Text color */
+}
+
+#remark blockquote p {
+  color: white;
+}
+
+/* Level 1 headings */
+#remark h1 {
+  font-size: 1.8em;
+  color: #e57373;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #666;
+  padding-bottom: 0.2em;
+}
+
+/* Level 2 headings */
+#remark h2 {
+  font-size: 1.6em;
+  color: #81c784;
+  margin: 1.5em 0 1em;
+  border-bottom: 1px dotted #666;
+  padding-bottom: 0.3em;
+}
+
+/* Level 3 headings */
+#remark h3 {
+  font-size: 1.4em;
+  color: #4caf50;
+  margin: 1.5em 0;
+}
+
+/* Level 4 headings */
+#remark h4 {
+  font-size: 1.2em;
+  color: #9e9e9e;
+  margin: 1.5em 0;
+}
+
+/* Images */
+#remark img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Unordered lists */
+#remark ul {
+  list-style-type: disc;
+  margin: 1em 0;
+  padding-left: 1em;
+}
+
+/* Nested lists */
+#remark ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+/* Ordered lists */
+#remark ol {
+  list-style-type: decimal;
+  margin: 1em 0;
+  padding-left: 1em;
+}
+
+/* List item */
+#remark li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/* Links */
+#remark a {
+  text-decoration: none;
+  color: #90caf9;
+}
+
+#remark a:hover {
+  text-decoration: underline;
+  color: #ffb74d;
+}
+
+/* Tables */
+#remark table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+#remark th,
+#remark td {
+  padding: 1em;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+#remark th {
+  background-color: #333;
+  color: #81c784;
+}
+
+#remark td {
+  background-color: #444;
+  color: #f1f1f1;
+}
+
+/* Footer */
+#remark-footer {
+  border-top: 1px dotted #666;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+#remark-footer p {
+  font-size: 0.7em;
+  color: #9e9e9e;
+}
+
+#remark-footer a {
+  color: #9e9e9e;
+  text-decoration: none;
+}
+
+#remark-footer a:hover {
+  text-decoration: underline;
+  color: #ffb74d;
+}
+
+/* Equation Styling */
+#remark .EquationSet ol {
+  display: flex;
+  flex-direction: column;
+}
+
+#remark .Equation-Body {
+  padding-left: 2em;
+}
+
+#remark .Equation-Number {
+  display: none;
+}
+
+#remark span.Equation-Number:before {
+  content: "(";
+}
+
+#remark span.Equation-Number:after {
+  content: ")";
 }
