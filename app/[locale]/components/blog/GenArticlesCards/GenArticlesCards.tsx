@@ -38,7 +38,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const createArticles = filteredData.map((data, key): ReactElement => {
     return (
       <Link
-        href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}&thumbnail=${data.thumbnail}`}
+        href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
         key={key}
       >
         <Card
