@@ -206,9 +206,9 @@ section {
 
 /* Style blockquote element */
 #remark blockquote {
-  background-color: rgba(129, 27, 27, 0.5); /* Light gray background */
+  background-color: rgba(129, 27, 27, 1); /* Light gray background */
   border-left: 4px solid #e57373; /* Red left border */
-  padding: 0.2em; /* Padding for spacing inside */
+  padding: 0.2em 0.5em; /* Padding for spacing inside */
   margin: 1em 0; /* Space around the blockquote */
   font-style: italic; /* Optional: Make text italic to mimic GitHub style */
   border-radius: 5px; /* Rounded corners */

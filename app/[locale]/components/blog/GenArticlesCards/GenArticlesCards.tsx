@@ -21,7 +21,9 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
     const filteredItems = data.filter(
       (metadata) =>
         metadata.tags.includes(searchValue) ||
-        metadata.title["en"].includes(searchValue) ||
+        metadata.title[currentLanguage as keyof typeof metadata.title].includes(
+          searchValue,
+        ) ||
         searchInput == "",
     );
 
@@ -36,12 +38,12 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const createArticles = filteredData.map((data, key): ReactElement => {
     return (
       <Link
-        href={`blog/article?title=${data.title[currentLanguage]}&path=${data.path}&thumbnail=${data.thumbnail}`}
+        href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}&thumbnail=${data.thumbnail}`}
         key={key}
       >
         <Card
           key={key}
-          title={data.title[currentLanguage]}
+          title={data.title[currentLanguage as keyof typeof data.title]}
           imagePath={data.thumbnail}
           imageAlt={data.thumbnailAlt}
           isReleased

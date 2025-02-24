@@ -1,12 +1,12 @@
 "use server";
 
-interface title {
+export type titleType = {
   en: string;
   br: string;
-}
+};
 
 export interface dataInterface {
-  title: title;
+  title: titleType;
   path: string;
   thumbnail: string;
   thumbnailAlt: string;

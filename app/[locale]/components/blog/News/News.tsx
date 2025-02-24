@@ -21,12 +21,12 @@ export default function News({
     if (timeDiff) {
       return (
         <Link
-          href={`blog/article?title=${data.title[currentLanguage]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
+          href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
           key={key}
         >
           <Card
             key={key}
-            title={data.title[currentLanguage]}
+            title={data.title[currentLanguage as keyof typeof data.title]}
             imagePath={data.thumbnail}
             imageAlt={data.thumbnailAlt}
             isReleased
