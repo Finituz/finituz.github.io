@@ -11,7 +11,7 @@ export default function News({
   const [currentLanguage, setCurrentLanguage] = useState("");
 
   useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
-  return articlesData.map((data, key) => {
+  const createArticle = articlesData.map((data, key) => {
     const currentDate = new Date();
     const createdAt = new Date(data.createdAt);
     const timeDiff =
@@ -35,4 +35,9 @@ export default function News({
       );
     }
   });
+  return (
+    <div className="flex gap-10 w-full p-14 overflow-hidden">
+      {createArticle}
+    </div>
+  );
 }

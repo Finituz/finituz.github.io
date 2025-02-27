@@ -7,6 +7,7 @@ import GenArticles from "../components/blog/GenArticlesCards/GenArticlesCards";
 import articlesData from "./article/data.json";
 import HighLightsOfTheWeek from "../components/blog/HighLightsOfTheWeek/HighLightsOfTheWeek";
 import News from "../components/blog/News/News";
+import Manuals from "../components/blog/Manuals/Manuals";
 
 export default function Home() {
   const t = useTranslations("Blog");
@@ -30,6 +31,17 @@ export default function Home() {
         <h1 className="text-7xl mb-20">{t("title:news")}</h1>
         <p className="text-justify px-5 pb-10">{t("subtitle:news")}</p>
         <News articlesData={articlesData} />
+        <Lantern className="bottom-56 right-0 -translate-x-1/2" />
+      </section>
+      <section id="manuals">
+        <h1 className="text-7xl mb-20">Manuais</h1>
+        <p className="text-justify px-5 pb-10">
+          Discover easy-to-read manuals for various programs! These articles
+          simplify complex features, offering clear steps, visuals, and tips for
+          beginners. Perfect for quick learning and mastering software
+          effortlessly
+        </p>
+        <Manuals articlesData={articlesData} />
         <Lantern className="bottom-56 right-0 -translate-x-1/2" />
       </section>
       <section>

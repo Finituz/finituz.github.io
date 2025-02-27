@@ -1,8 +1,8 @@
 [
   {
-    "title": { "en": "how to don't use linux", "br": "Como não usar linux" },
-    "path": "/articles/how_to_dont_use_linux",
-    "thumbnail": "/imgs/articles/linuxx.png",
+    "title": { "en": "how to not use linux", "br": "Como não usar linux" },
+    "path": "/articles/how_to_not_use_linux/how_to_not_use_linux",
+    "thumbnail": "/imgs/articles/linux.png",
     "thumbnailAlt": "Penguim image",
     "createdAt": "2025-02-23",
     "lastModified": "2025-02-23",
@@ -10,5 +10,45 @@
     "dislikes": 0,
     "comments": [],
     "tags": ["linux", "tecnology"]
+  },
+  {
+    "title": {
+      "en": "how to write better - VIM",
+      "br": "Como escrever melhor - VIM"
+    },
+    "path": "/articles/how_to_write_better_vim/how_to_write_better_vim",
+    "thumbnail": "/imgs/articles/vim.png",
+    "thumbnailAlt": "VIM logo image",
+    "createdAt": "2025-02-23",
+    "lastModified": "2025-02-23",
+    "likes": 0,
+    "dislikes": 0,
+    "comments": [],
+    "tags": ["linux", "tecnology"]
+  },
+
+  {
+    "title": {
+      "en": "vim manual",
+      "br": "Manual do vim"
+    },
+    "path": "/manuals/vim/vim",
+    "thumbnail": "/imgs/manuals/man_vim_thumb.png",
+    "thumbnailAlt": "Terminal screen write finituz man vim?",
+    "createdAt": "2025-02-23",
+    "lastModified": "2025-02-23",
+    "likes": 0,
+    "dislikes": 0,
+    "comments": [],
+    "tags": [
+      "linux",
+      "tecnology",
+      "vim",
+      "neovim",
+      "vi",
+      "history",
+      "community",
+      "manual"
+    ]
   }
 ]

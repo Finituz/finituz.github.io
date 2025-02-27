@@ -17,7 +17,7 @@ export default function Card({
 
   return (
     <Table
-      className="relative text-center overflow-hidden hover:scale-110 transition-all hover:shadow-neon duration-500 lg:w-[400px] md:w-82 w-72 h-96"
+      className="relative text-center overflow-hidden hover:scale-110 transition-all hover:shadow-neon duration-500 lg:w-[400px] md:w-[300px] w-72 h-96"
       showTitle
       title={title}
     >
@@ -29,7 +29,7 @@ export default function Card({
 
       <Image
         src={imagePath}
-        width={300}
+        width={150}
         height={150}
         alt={imageAlt}
         className="w-full h-full rounded-md"
