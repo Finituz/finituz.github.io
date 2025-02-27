@@ -68,7 +68,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
 
   return (
     <>
-      <div className="relative my-10 p-10">
+      <div className="relative my-10 ">
         <RiSearchLine className="absolute top-1/2 transform -translate-y-1/2 left-2" />
         <input
           className="pl-10 bg-black border-2 border-white rounded-xl p-2"
@@ -80,7 +80,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
       </div>
       <div className="flex flex-col gap-5 justify-center my-10 items-center text-center md:w-1/2 px-2 w-full">
         <p className="text-5xl">{t("title:categories")}</p>
-        <div className="flex bg-red-900 border-2 p-2 rounded-xl w-full border-white gap-5 overflow-x">
+        <div className="flex bg-red-900 border-2 p-2 overflow-scroll rounded-xl w-full border-white gap-5 overflow-x">
           {createTags}
         </div>
       </div>

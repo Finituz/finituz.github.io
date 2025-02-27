@@ -11,21 +11,6 @@
     "comments": [],
     "tags": ["linux", "tecnology"]
   },
-  {
-    "title": {
-      "en": "how to write better - VIM",
-      "br": "Como escrever melhor - VIM"
-    },
-    "path": "/articles/how_to_write_better_vim/how_to_write_better_vim",
-    "thumbnail": "/imgs/articles/vim.png",
-    "thumbnailAlt": "VIM logo image",
-    "createdAt": "2025-02-23",
-    "lastModified": "2025-02-23",
-    "likes": 0,
-    "dislikes": 0,
-    "comments": [],
-    "tags": ["linux", "tecnology"]
-  },
 
   {
     "title": {
