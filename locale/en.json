@@ -49,6 +49,8 @@
     "placeholder:search": "Search...",
     "title:hightlights-week": "Hightlights of the week",
     "subtitle:hightlights-week": "Explore the most exciting updates, trends, and innovations in the world of Linux and open-source software. From new releases and security patches to in-depth tutorials and community-driven projects, we bring you the stories that matter most to tech enthusiasts and professionals alike. Stay ahead of the curve with our curated selection of articles, reviews, and guides—your go-to source for everything open-source and Linux-related. Dive in and discover what’s shaping the future of technology this week!",
+    "title:manuals": "Manuals",
+    "subtitle:manuals": "Discover easy-to-read manuals for various programs! These articles simplify complex features, offering clear steps, visuals, and tips for beginners. Perfect for quick learning and mastering software effortlessly",
     "title:news": "News!",
     "subtitle:news": "Stay informed with the most important updates, breakthroughs, and developments in the Linux and open-source world. From kernel updates and software releases to community spotlights and industry trends, we bring you the stories that matter most. Whether you're a developer, sysadmin, or tech enthusiast, our news section keeps you in the loop with in-depth analysis, expert opinions, and timely reports. Don’t miss out on what’s driving innovation and shaping the future of open-source technology this week!",
     "title:explore": "Explore!",
