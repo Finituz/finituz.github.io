@@ -4,7 +4,7 @@ import Lantern from "@/app/[locale]/components/Lantern/Lantern";
 import { useTranslations } from "next-intl";
 
 import GenArticles from "../components/blog/GenArticlesCards/GenArticlesCards";
-import articlesData from "./article/data.json";
+import articlesData from "@/public/articles/data.json";
 import HighLightsOfTheWeek from "../components/blog/HighLightsOfTheWeek/HighLightsOfTheWeek";
 import News from "../components/blog/News/News";
 import Manuals from "../components/blog/Manuals/Manuals";
