@@ -204,6 +204,17 @@ section {
   border-radius: 3px;
 }
 
+#remark code.language-bash {
+  display: flex;
+  flex-direction: column;
+  color: green;
+}
+
+#remark code.language-bash::before {
+  content: "bash";
+  color: #ffb74d;
+}
+
 /* Style blockquote element */
 #remark blockquote {
   background-color: rgba(129, 27, 27, 1); /* Light gray background */

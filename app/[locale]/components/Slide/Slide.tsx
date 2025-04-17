@@ -69,7 +69,7 @@ export default function Slide({
       <button
         onClick={() => changeSlide(true)}
         className={
-          "absolute text-7xl md:hidden hover:scale-x-120 z-50 " +
+          "absolute text-7xl md:hidden hover:scale-x-120 z-10 " +
           buttonLeftClass
         }
       >
@@ -85,7 +85,7 @@ export default function Slide({
       <button
         onClick={() => changeSlide()}
         className={
-          "absolute text-7xl md:hidden hover:scale-x-120 z-50 " +
+          "absolute text-7xl md:hidden hover:scale-x-120 z-10 " +
           buttonRightClass
         }
       >

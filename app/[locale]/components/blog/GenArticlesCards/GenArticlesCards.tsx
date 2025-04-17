@@ -1,26 +1,39 @@
 import Card from "@/app/[locale]/components/Card/Card";
 import { RiSearchLine } from "react-icons/ri";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { dataInterface } from "@/app/[locale]/config";
+import { dataInterface, GetLanguage } from "@/app/[locale]/config";
 
 export default function GenArticles({ data }: { data: Array<dataInterface> }) {
-  const [currentLanguage, setCurrentLanguage] = useState("");
   const [searchValue, setSearch] = useState("");
   const [filteredData, setFilter] = useState(data);
+  const { currentLanguage } = GetLanguage();
+
   let tagsList: Array<string> = [];
-
-  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
-
   const t = useTranslations("Blog");
+
+  data.forEach((metadata) => {
+    if (!currentLanguage) return;
+
+    metadata.tags[currentLanguage as keyof typeof metadata.tags]?.map(
+      (tag: string) => tagsList.push(tag),
+    );
+
+    metadata.tags["common"]?.map((tag: string) => tagsList.push(tag));
+  });
 
   const onSearch = (searchInput: string) => {
     setSearch(searchInput);
 
     const filteredItems = data.filter(
       (metadata) =>
-        metadata.tags.includes(searchValue) ||
+        metadata.tags[currentLanguage as keyof typeof metadata.tags]?.some(
+          (tag: string) => tag.includes(searchValue),
+        ) ||
+        metadata.tags["common"]?.some((tag: string) =>
+          tag.includes(searchValue),
+        ) ||
         metadata.title[currentLanguage as keyof typeof metadata.title].includes(
           searchValue,
         ) ||
@@ -35,25 +48,21 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
       <h1>Term could not be found!</h1>
     </div>
   );
-  const createArticles = filteredData.map((data, key): ReactElement => {
+  const createArticles = filteredData.map((metadata, key): ReactElement => {
     return (
       <Link
-        href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
+        href={`blog/article?title=${metadata.title[currentLanguage as keyof typeof metadata.title]}&path=${metadata.path}-${currentLanguage}&thumbnail=${metadata.thumbnail}`}
         key={key}
       >
         <Card
           key={key}
-          title={data.title[currentLanguage as keyof typeof data.title]}
-          imagePath={data.thumbnail}
-          imageAlt={data.thumbnailAlt}
+          title={metadata.title[currentLanguage as keyof typeof metadata.title]}
+          imagePath={metadata.thumbnail}
+          imageAlt={metadata.thumbnailAlt}
           isReleased
         />
       </Link>
     );
-  });
-
-  data.map(({ tags }) => {
-    tags.map((tag) => tagsList.push(tag));
   });
 
   const createTags = tagsList.map((tag, key) => {
@@ -84,7 +93,10 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
           {createTags}
         </div>
       </div>
-      <div id="blog-articles" className="grid grid-cols-2 gap-10">
+      <div
+        id="blog-articles"
+        className="grid grid-cols-1 md:grid-cols-2 gap-10"
+      >
         {filteredData.length > 0 ? createArticles : termNotFound()}
       </div>
     </>

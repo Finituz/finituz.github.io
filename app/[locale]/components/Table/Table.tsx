@@ -14,12 +14,12 @@ export default function Table({
   return (
     <article
       className={
-        "bg-red-900 flex flex-col items-center gap-10 p-5 w-[95vw] lg:w-4/5 rounded-lg border-2 border-white " +
+        "bg-red-900 flex flex-col cursor-pointer items-center gap-10 p-5 w-[95vw] lg:w-4/5 rounded-lg border-2 border-white " +
         className
       }
     >
       {showTitle ? (
-        <header className="w-full h-5" title={title}>
+        <header className="w-full h-5 mb-5" title={title}>
           <h1 className="text-2xl">
             {title && title.length > 25
               ? title?.slice(0, 25).concat("...")

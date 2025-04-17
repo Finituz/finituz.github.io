@@ -1,17 +1,11 @@
 import Card from "../../Card/Card";
-import { dataInterface } from "@/app/[locale]/config";
+import { dataInterface, GetLanguage } from "@/app/[locale]/config";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-export default function News({
-  articlesData,
-}: {
-  articlesData: Array<dataInterface>;
-}) {
-  const [currentLanguage, setCurrentLanguage] = useState("");
+export default function News({ data }: { data: Array<dataInterface> }) {
+  const { currentLanguage } = GetLanguage();
 
-  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
-  const createArticle = articlesData.map((data, key) => {
+  const createArticle = data.map((data, key) => {
     const currentDate = new Date();
     const createdAt = new Date(data.createdAt);
     const timeDiff =

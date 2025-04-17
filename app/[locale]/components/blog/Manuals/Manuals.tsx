@@ -1,36 +1,32 @@
 import Card from "../../Card/Card";
-import { dataInterface } from "@/app/[locale]/config";
+import { dataInterface, GetLanguage } from "@/app/[locale]/config";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-export default function News({
-  articlesData,
-}: {
-  articlesData: Array<dataInterface>;
-}) {
-  const [currentLanguage, setCurrentLanguage] = useState("");
+export default function News({ data }: { data: Array<dataInterface> }) {
+  const { currentLanguage } = GetLanguage();
 
-  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
-  const createArticle = articlesData
-    .filter((data) => data.tags.includes("manual"))
-    .map((data, key) => {
+  const createArticle = data
+    .filter((metadata) => metadata.manual)
+    .map((metadata, key) => {
       return (
         <Link
-          href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
+          href={`blog/article?title=${metadata.title[currentLanguage as keyof typeof metadata.title]}&path=${metadata.path}-${currentLanguage}&thumbnail=${metadata.thumbnail}`}
           key={key}
         >
           <Card
             key={key}
-            title={data.title[currentLanguage as keyof typeof data.title]}
-            imagePath={data.thumbnail}
-            imageAlt={data.thumbnailAlt}
+            title={
+              metadata.title[currentLanguage as keyof typeof metadata.title]
+            }
+            imagePath={metadata.thumbnail}
+            imageAlt={metadata.thumbnailAlt}
             isReleased
           />
         </Link>
       );
     });
   return (
-    <div className="flex gap-10 w-full p-14 overflow-hidden">
+    <div className="flex justify-center items-center gap-10 w-full p-14 overflow-hidden">
       {createArticle}
     </div>
   );

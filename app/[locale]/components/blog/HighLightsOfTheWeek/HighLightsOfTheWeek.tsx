@@ -1,24 +1,21 @@
 import Slide from "../../Slide/Slide";
 import Card from "../../Card/Card";
-import { dataInterface } from "@/app/[locale]/config";
+import { dataInterface, GetLanguage } from "@/app/[locale]/config";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function HighLightsOfTheWeek({
-  articlesData,
+  data,
 }: {
-  articlesData: Array<dataInterface>;
+  data: Array<dataInterface>;
 }) {
-  const [currentLanguage, setCurrentLanguage] = useState("");
-
-  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
+  const { currentLanguage } = GetLanguage();
   return (
     <Slide
       id="hightlights-wrapper"
       buttonLeftClass="left-8 top-1/2 transform -translate-y-1/2"
       buttonRightClass="right-8 top-1/2 transform -translate-y-1/2"
     >
-      {articlesData
+      {data
         .filter((data) => (data.likes == 0 ? data : null))
         .map((data, key) => (
           <Link

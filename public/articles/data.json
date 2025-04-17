@@ -9,31 +9,22 @@
     "likes": 0,
     "dislikes": 0,
     "comments": [],
-    "tags": ["linux", "tecnology"]
+    "tags": { "en": ["linux", "tecnology"], "br": ["linux", "tecnologia"] }
   },
 
   {
     "title": {
-      "en": "vim manual",
-      "br": "Manual do vim"
+      "en": "how to set default sftp permissions",
+      "br": "Como setar permissões padrões no sftp"
     },
-    "path": "/manuals/vim/vim",
-    "thumbnail": "/imgs/manuals/vim-manual.png",
-    "thumbnailAlt": "Terminal screen write finituz man vim?",
+    "path": "/articles/sftp_permissions/sftp_permissions",
+    "thumbnail": "/imgs/articles/sftp-permissions/sftp_permissions.png",
+    "thumbnailAlt": "Penguim image",
     "createdAt": "2025-02-23",
     "lastModified": "2025-02-23",
     "likes": 0,
     "dislikes": 0,
     "comments": [],
-    "tags": [
-      "linux",
-      "tecnology",
-      "vim",
-      "neovim",
-      "vi",
-      "history",
-      "community",
-      "manual"
-    ]
+    "tags": { "en": ["linux", "tecnology"], "br": ["linux", "tecnologia"] }
   }
 ]
