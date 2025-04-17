@@ -1,4 +1,4 @@
-# How to Enforce Permissions on an SFTP Server
+# How to set default permissions on an SFTP Server
 
 Let’s say you want all users on your SFTP server to have their uploaded files automatically granted read, write, and execute permissions for all other users on the server.
 

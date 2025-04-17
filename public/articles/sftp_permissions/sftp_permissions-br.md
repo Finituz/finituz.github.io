@@ -1,4 +1,4 @@
-# Como forçar permissões em um servidor SFTP
+# Como setar as permissões padrão em um servidor SFTP
 
 Digamos que você gostaria que todos os usuários do seu servidor SFTP, ao fazerem upload de um arquivo, tivessem esse arquivo com permissões de leitura, escrita e execução para todos os usuários do servidor.
 

@@ -19,12 +19,15 @@
     },
     "path": "/articles/sftp_permissions/sftp_permissions",
     "thumbnail": "/imgs/articles/sftp-permissions/sftp_permissions.png",
-    "thumbnailAlt": "Penguim image",
-    "createdAt": "2025-02-23",
-    "lastModified": "2025-02-23",
+    "thumbnailAlt": "sftp permissions? thumbnail",
+    "createdAt": "2025-04-16",
+    "lastModified": "2025-04-16",
     "likes": 0,
     "dislikes": 0,
     "comments": [],
-    "tags": { "en": ["linux", "tecnology"], "br": ["linux", "tecnologia"] }
+    "tags": {
+      "en": ["linux", "tecnology", "sftp", "permissions", "server"],
+      "br": ["linux", "tecnologia", "sftp", "permissões", "servidor"]
+    }
   }
 ]
