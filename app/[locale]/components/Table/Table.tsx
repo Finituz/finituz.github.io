@@ -14,8 +14,9 @@ export default function Table({
   return (
     <article
       className={
-        "bg-red-900 flex flex-col cursor-pointer items-center gap-10 p-5 w-[95vw] lg:w-4/5 rounded-lg border-2 border-white " +
-        className
+        `bg-red-900 flex flex-col cursor-pointer 
+         items-center gap-10 p-5 rounded-lg border-2
+         border-white ` + className
       }
     >
       {showTitle ? (
