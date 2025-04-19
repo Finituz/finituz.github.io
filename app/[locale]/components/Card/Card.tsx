@@ -19,8 +19,7 @@ export default function Card({
     <Table
       className={`relative flex items-center justify-center text-center
                   overflow-hidden hover:scale-110 transition-all 
-                  hover:shadow-neon duration-500 lg:w-[400px] 
-                  md:w-[300px] sm:w-[100px] h-96`}
+                  hover:shadow-neon duration-500 w-[400px] h-96`}
       showTitle
       floatHeader
       title={title}
@@ -33,9 +32,8 @@ export default function Card({
           {t("text:coming_soon")}
         </div>
       ) : null}
-      <div>
-        <Image src={imagePath} fill alt={imageAlt} className="rounded-md" />
-      </div>
+
+      <Image src={imagePath} fill alt={imageAlt} className="rounded-md" />
     </Table>
   );
 }
