@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 export default function Slide({
   children,
@@ -70,7 +70,7 @@ export default function Slide({
       <button
         onClick={() => changeSlide(true)}
         className={
-          "absolute text-7xl md:hidden hover:scale-x-120 z-10 " +
+          "absolute text-7xl md:hidden hover:scale-x-120 bg-red-900 rounded-xl border p-2 z-10 " +
           buttonLeftClass
         }
       >
@@ -86,7 +86,7 @@ export default function Slide({
       <button
         onClick={() => changeSlide()}
         className={
-          "absolute text-7xl md:hidden hover:scale-x-120 z-10 " +
+          "absolute text-7xl md:hidden bg-red-900 rounded-xl border p-2 hover:scale-x-120 z-10 " +
           buttonRightClass
         }
       >
