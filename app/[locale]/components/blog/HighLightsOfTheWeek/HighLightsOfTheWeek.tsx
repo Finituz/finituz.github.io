@@ -12,7 +12,7 @@ export default function HighLightsOfTheWeek({
   const { locale } = useParams<{ locale: string }>();
 
   const cards = data.map((metadata, key) => {
-    const isMiddleCard = key == 1 ? "scale-110 z-10" : null;
+    const isMiddleCard = key == 1 ? "md:scale-110 md:z-10" : null;
 
     return (
       <Link
