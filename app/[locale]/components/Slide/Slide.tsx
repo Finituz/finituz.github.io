@@ -36,18 +36,18 @@ export default function Slide({
   const changeSlide = (goBack: boolean = false) => {
     if (!wrapper.current || !wrapperSlideCounter.current) return;
 
-    const wrapperChildren = wrapper.current.childNodes;
+    const wrapperChildren = wrapper.current.querySelectorAll(":scope > *");
     const wrapperChildrenLength: number = wrapperChildren.length - 1;
 
+    console.log(wrapperChildren);
     count = count < 0 ? wrapperChildrenLength : count;
 
-    wrapperChildren.forEach((child: ChildNode, index: number) => {
-      const wrapperChild = wrapperChildren[index] as HTMLDivElement;
-
+    wrapperChildren.forEach((child, index: number) => {
       count == index
-        ? wrapperChild.classList.remove("hidden")
-        : wrapperChild.classList.add("hidden"),
-        setWrapperSlideCounter();
+        ? child.classList.remove("hidden")
+        : child.classList.add("hidden");
+
+      setWrapperSlideCounter();
     });
 
     goBack ? count-- : count++;

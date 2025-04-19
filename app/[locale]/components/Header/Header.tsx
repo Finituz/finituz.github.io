@@ -27,14 +27,22 @@ export default function Header() {
   };
 
   const gamesSiteLink = () => (
-    <a href="/" className="flex items-center gap-2">
+    <a
+      onClick={() => setIsBlog(false)}
+      href="/"
+      className="flex items-center gap-2"
+    >
       <RiGamepadLine />
       {t("game_site")}
     </a>
   );
 
   const blogSiteLink = () => (
-    <Link href="/blog" className="flex items-center gap-2">
+    <Link
+      onClick={() => setIsBlog(true)}
+      href="/blog"
+      className="flex items-center gap-2"
+    >
       <RiNewsLine /> {t("blog")}
     </Link>
   );
@@ -58,7 +66,6 @@ export default function Header() {
 
   useEffect(() => {
     setIsBlog(window.location.href.includes("blog"));
-    console.log(window.location.href.includes("blog"));
   }, []);
 
   return (

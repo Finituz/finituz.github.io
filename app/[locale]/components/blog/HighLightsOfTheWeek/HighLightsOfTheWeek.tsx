@@ -1,37 +1,41 @@
 import Slide from "../../Slide/Slide";
 import Card from "../../Card/Card";
-import { dataInterface, GetLanguage } from "@/app/[locale]/config";
+import { dataInterface } from "@/app/[locale]/types";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 export default function HighLightsOfTheWeek({
   data,
 }: {
   data: Array<dataInterface>;
 }) {
-  const { currentLanguage } = GetLanguage();
+  const { locale } = useParams<{ locale: string }>();
+
+  const cards = data.map((metadata, key) => (
+    <Link
+      className="flex items-center justify-center"
+      href={`blog/article?path=${encodeURIComponent(metadata.path)}&thumbnail=${encodeURIComponent(metadata.thumbnailPath)}`}
+      key={key}
+    >
+      <Card
+        key={key}
+        title={metadata.title[locale as keyof typeof metadata.title]}
+        imagePath={metadata.thumbnailPath}
+        imageAlt={
+          metadata.thumbnailAlt[locale as keyof typeof metadata.thumbnailAlt]
+        }
+        isReleased
+      />
+    </Link>
+  ));
+
   return (
     <Slide
       id="hightlights-wrapper"
       buttonLeftClass="left-8 top-1/2 transform -translate-y-1/2"
       buttonRightClass="right-8 top-1/2 transform -translate-y-1/2"
     >
-      {data
-        .filter((data) => (data.likes == 0 ? data : null))
-        .map((data, key) => (
-          <Link
-            className="flex items-center justify-center"
-            href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
-            key={key}
-          >
-            <Card
-              key={key}
-              title={data.title[currentLanguage as keyof typeof data.title]}
-              imagePath={data.thumbnail}
-              imageAlt={data.thumbnailAlt}
-              isReleased
-            />
-          </Link>
-        ))}
+      {cards}
     </Slide>
   );
 }

@@ -2,25 +2,21 @@
 import { routing, usePathname } from "@/i18n/routing";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { useParams, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 function ChangeLanguage() {
-  const [currentLanguage, setCurrentLanguage] = useState("");
   const currentPath = usePathname();
   const currentQuery = useSearchParams();
-  useEffect(() => setCurrentLanguage(document.documentElement.lang), []);
+  const { locale } = useParams<{ locale: string }>();
 
   return (
     <div className="group fixed flex flex-col items-center gap-2 right-2 top-52 z-20 cursor-pointer">
-      <i
-        id="currentLanguage"
-        className="text-center bg-red-900 rounded-full p-5 border"
-      >
+      <i id="locale" className="text-center bg-red-900 rounded-full p-5 border">
         {
           <Image
-            alt={currentLanguage + " flag"}
-            src={`/imgs/flags/${currentLanguage}.svg`}
+            alt={locale + " flag"}
+            src={`/imgs/flags/${locale}.svg`}
             width={25}
             height={25}
           />
@@ -30,11 +26,9 @@ function ChangeLanguage() {
         {routing.locales.map((loc, key) => {
           let selected;
 
-          if (loc == currentLanguage) {
+          if (loc == locale) {
             selected = "bg-red-500";
           }
-
-          console.log(loc, currentPath, currentQuery);
 
           return (
             <li

@@ -10,7 +10,7 @@ export default function News({ data }: { data: Array<dataInterface> }) {
     .map((metadata, key) => {
       return (
         <Link
-          href={`blog/article?title=${metadata.title[currentLanguage as keyof typeof metadata.title]}&path=${metadata.path}-${currentLanguage}&thumbnail=${metadata.thumbnail}`}
+          href={`blog/article?title=${metadata.title[currentLanguage as keyof typeof metadata.title]}&thumbnail=${metadata.thumbnail}`}
           key={key}
         >
           <Card

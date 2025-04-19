@@ -3,24 +3,21 @@ import { RiSearchLine } from "react-icons/ri";
 import { ReactElement, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { dataInterface, GetLanguage } from "@/app/[locale]/config";
+import { dataInterface } from "@/app/[locale]/types";
+import { useParams } from "next/navigation";
 
 export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const [searchValue, setSearch] = useState("");
   const [filteredData, setFilter] = useState(data);
-  const { currentLanguage } = GetLanguage();
+  const { locale } = useParams<{ locale: string }>();
 
   let tagsList: Array<string> = [];
   const t = useTranslations("Blog");
 
   data.forEach((metadata) => {
-    if (!currentLanguage) return;
-
-    metadata.tags[currentLanguage as keyof typeof metadata.tags]?.map(
-      (tag: string) => tagsList.push(tag),
+    metadata.tags[locale as keyof typeof metadata.tags]?.map((tag: string) =>
+      tagsList.push(tag),
     );
-
-    metadata.tags["common"]?.map((tag: string) => tagsList.push(tag));
   });
 
   const onSearch = (searchInput: string) => {
@@ -28,13 +25,10 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
 
     const filteredItems = data.filter(
       (metadata) =>
-        metadata.tags[currentLanguage as keyof typeof metadata.tags]?.some(
+        metadata.tags[locale as keyof typeof metadata.tags]?.some(
           (tag: string) => tag.includes(searchValue),
         ) ||
-        metadata.tags["common"]?.some((tag: string) =>
-          tag.includes(searchValue),
-        ) ||
-        metadata.title[currentLanguage as keyof typeof metadata.title].includes(
+        metadata.title[locale as keyof typeof metadata.title].includes(
           searchValue,
         ) ||
         searchInput == "",
@@ -51,14 +45,16 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const createArticles = filteredData.map((metadata, key): ReactElement => {
     return (
       <Link
-        href={`blog/article?title=${metadata.title[currentLanguage as keyof typeof metadata.title]}&path=${metadata.path}-${currentLanguage}&thumbnail=${metadata.thumbnail}`}
+        href={`blog/article?path=${encodeURIComponent(metadata.path)}&thumbnail=${encodeURIComponent(metadata.thumbnailPath)}`}
         key={key}
       >
         <Card
           key={key}
-          title={metadata.title[currentLanguage as keyof typeof metadata.title]}
-          imagePath={metadata.thumbnail}
-          imageAlt={metadata.thumbnailAlt}
+          title={metadata.title[locale as keyof typeof metadata.title]}
+          imagePath={metadata.thumbnailPath}
+          imageAlt={
+            metadata.thumbnailAlt[locale as keyof typeof metadata.thumbnailAlt]
+          }
           isReleased
         />
       </Link>

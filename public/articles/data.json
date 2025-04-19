@@ -1,30 +1,29 @@
 [
   {
     "title": { "en": "how to not use linux", "br": "Como não usar linux" },
-    "path": "/articles/how_to_not_use_linux/how_to_not_use_linux",
-    "thumbnail": "/imgs/articles/linux.png",
-    "thumbnailAlt": "Penguim image",
+    "path": "/articles/how_to_not_use_linux",
+    "thumbnailPath": "/imgs/articles/linux.png",
+    "thumbnailAlt": {
+      "en": "Tux image, the linux mascot.",
+      "br": "Imagem do Tux, penguim do linux."
+    },
     "createdAt": "2025-02-23",
     "lastModified": "2025-02-23",
-    "likes": 0,
-    "dislikes": 0,
-    "comments": [],
     "tags": { "en": ["linux", "tecnology"], "br": ["linux", "tecnologia"] }
   },
-
   {
     "title": {
       "en": "how to set default sftp permissions",
       "br": "Como setar permissões padrões no sftp"
     },
-    "path": "/articles/sftp_permissions/sftp_permissions",
-    "thumbnail": "/imgs/articles/sftp-permissions/sftp_permissions.png",
-    "thumbnailAlt": "sftp permissions? thumbnail",
+    "path": "/articles/sftp_permissions",
+    "thumbnailPath": "/imgs/articles/sftp-permissions/sftp_permissions.png",
+    "thumbnailAlt": {
+      "en": "A terminal with 'sftp permissions?' writen on it.",
+      "br": "um terminal com 'sftp permissions?' escrito."
+    },
     "createdAt": "2025-04-16",
     "lastModified": "2025-04-16",
-    "likes": 0,
-    "dislikes": 0,
-    "comments": [],
     "tags": {
       "en": ["linux", "tecnology", "sftp", "permissions", "server"],
       "br": ["linux", "tecnologia", "sftp", "permissões", "servidor"]

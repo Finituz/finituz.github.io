@@ -1,5 +1,5 @@
 import Card from "../../Card/Card";
-import { dataInterface, GetLanguage } from "@/app/[locale]/config";
+import { dataInterface, GetLanguage } from "@/app/[locale]/types";
 import Link from "next/link";
 
 export default function News({ data }: { data: Array<dataInterface> }) {
@@ -15,7 +15,7 @@ export default function News({ data }: { data: Array<dataInterface> }) {
     if (timeDiff) {
       return (
         <Link
-          href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&path=${data.path}-${currentLanguage}&thumbnail=${data.thumbnail}`}
+          href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&thumbnail=${data.thumbnail}`}
           key={key}
         >
           <Card

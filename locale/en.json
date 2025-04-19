@@ -55,7 +55,8 @@
     "subtitle:news": "Stay informed with the most important updates, breakthroughs, and developments in the Linux and open-source world. From kernel updates and software releases to community spotlights and industry trends, we bring you the stories that matter most. Whether you're a developer, sysadmin, or tech enthusiast, our news section keeps you in the loop with in-depth analysis, expert opinions, and timely reports. Don’t miss out on what’s driving innovation and shaping the future of open-source technology this week!",
     "title:explore": "Explore!",
     "subtitle:explore": "Dive into our powerful search section and uncover the best Linux and open-source resources tailored to your needs. Whether you’re searching for tutorials, software recommendations, troubleshooting guides, or the latest news, our intuitive search tool helps you navigate the vast world of open-source technology with ease. Explore curated content, filter by topics, and discover hidden gems that match your interests. Start your search today and unlock the knowledge you need to take your Linux experience to the next level!",
-    "error:not-found": "Article could not be found."
+    "error:not-found": "Article could not be found.",
+    "button::go-back": "Go back"
   },
 
   "Extension": {
