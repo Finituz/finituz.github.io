@@ -8,6 +8,7 @@ import Lantern from "../../components/Lantern/Lantern";
 import { useTranslations } from "next-intl";
 import remarkGfm from "remark-gfm";
 import remarkHTML from "remark-html";
+import { Link } from "@/i18n/routing";
 
 function ArticleContent() {
   const searchParams = useSearchParams();
@@ -39,12 +40,12 @@ function ArticleContent() {
     <main>
       <section className="flex flex-col text-left overflow-scroll items-center justify-center gap-10">
         <header id="article-header" className="w-screen h-96">
-          <b
-            onClick={() => window.history.back()}
+          <Link
+            href="/blog"
             className=" absolute top-24 left-5 text-2xl cursor-pointer"
           >
             {"<"} {t("button::go-back")}
-          </b>
+          </Link>
         </header>
         <article id="remark" className="w-full p-8 lg:w-1/2">
           <Markdown remarkPlugins={[remarkGfm, remarkHTML]}>{content}</Markdown>

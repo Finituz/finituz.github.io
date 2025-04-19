@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Suspense, MouseEvent, FormEvent } from "react"; // Import Suspense
+import { useState, Suspense, MouseEvent, FormEvent, ChangeEvent } from "react"; // Import Suspense
 import Markdown from "react-markdown";
 import Lantern from "../../../components/Lantern/Lantern";
 import { useTranslations } from "next-intl";
@@ -8,7 +8,9 @@ import remarkGfm from "remark-gfm";
 import remarkHTML from "remark-html";
 
 function ArticleContent() {
-  const [content, setContent] = useState("# Hello, world!");
+  const [content, setContent] = useState(
+    () => localStorage.getItem("new-article-tmp") ?? "# Hello, world!",
+  );
   const [filename, setFilename] = useState("untitled");
 
   const exportAsFile = (e: MouseEvent<HTMLButtonElement>) => {
@@ -49,6 +51,27 @@ function ArticleContent() {
     }
   };
 
+  const onContentChanged = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    if (!e.currentTarget.value) {
+      localStorage.removeItem("new-article-tmp");
+      setContent("");
+      return;
+    }
+
+    setContent((prevContent) => {
+      if (prevContent != e.target.value) {
+        const tmp = {
+          filename,
+          content,
+        };
+
+        localStorage.setItem("new-article-tmp", JSON.stringify(tmp));
+      }
+
+      return e.target.value;
+    });
+  };
+
   return (
     <main className="w-full">
       <section className="flex flex-col text-left w-full overflow-scroll items-center justify-center gap-10">
@@ -62,18 +85,20 @@ function ArticleContent() {
                 Title:
                 <input
                   value={filename}
+                  required
                   onChange={(e) => setFilename(e.target.value)}
                   className="rounded-xl w-full text-black p-2"
-                  placeholder="Put filename here...."
+                  placeholder="Put title here...."
                 />
               </label>
               <label className="flex flex-col self-start w-full">
                 Thumbnail:
-                <input type="file" name="thumbnail" accept="image/*" />
+                <input type="file" required name="thumbnail" accept="image/*" />
               </label>
               <label className="flex flex-col self-start w-full">
                 Thumbnail alt:
                 <input
+                  required
                   name="thumbnailAlt"
                   className="rounded-xl w-full text-black p-2"
                   placeholder="Describe the image..."
@@ -82,21 +107,24 @@ function ArticleContent() {
               <label className="w-full">
                 Content:
                 <textarea
+                  required
                   value={content}
+                  placeholder="Type something new..."
                   className="text-black h-96 w-full rounded-xl p-2"
-                  onChange={(e) => setContent(e.target.value)}
+                  onChange={onContentChanged}
                 />
               </label>
               <label className="w-full">
                 Tags:
                 <input
+                  required
                   name="tags"
                   onChange={(e) => setFilename(e.currentTarget.value)}
                   className="rounded-xl w-full text-black p-2"
                   placeholder="Put tags separate by space here...."
                 />
               </label>
-              <div className="flex gap-5">
+              <fieldset className="flex gap-5">
                 <button
                   onClick={exportAsFile}
                   type="submit"
@@ -110,7 +138,7 @@ function ArticleContent() {
                 >
                   send to blog
                 </button>
-              </div>
+              </fieldset>
             </form>
             <label className="w-full h-full">
               Preview:

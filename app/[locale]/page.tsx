@@ -97,7 +97,7 @@ export default function Home() {
           id="tecnologies-wrapper"
           buttonLeftClass="left-16 top-10 transform"
           buttonRightClass="right-16 top-10 transform"
-          className="md:flex-col"
+          className="md:flex-col md:gap-10"
         >
           <InfoTable
             iconSrc={godot}
