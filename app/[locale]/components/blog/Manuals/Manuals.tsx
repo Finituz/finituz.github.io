@@ -29,7 +29,7 @@ export default function News({ data }: { data: Array<dataInterface> }) {
       );
     });
   return (
-    <div className="flex justify-center items-center gap-10 w-full p-14 overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
       {createArticle}
     </div>
   );
