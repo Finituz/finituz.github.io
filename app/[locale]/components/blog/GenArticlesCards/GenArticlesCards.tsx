@@ -64,7 +64,12 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
   const createTags = tagsList.map((tag, key) => {
     if (tagsList.indexOf(tag) == key) {
       return (
-        <div onClick={() => onSearch(tag)} className="cursor-pointer" key={key}>
+        <div
+          onClick={() => onSearch(tag)}
+          title={tag}
+          className="cursor-pointer whitespace-nowrap"
+          key={key}
+        >
           {tag}
         </div>
       );
@@ -85,7 +90,7 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
       </div>
       <div className="flex flex-col gap-5 justify-center my-10 items-center text-center md:w-1/2 px-2 w-full">
         <p className="text-5xl">{t("title:categories")}</p>
-        <div className="flex bg-red-900 border-2 p-2 overflow-scroll rounded-xl w-full border-white gap-5 overflow-x">
+        <div className="flex bg-red-900 border-2 p-2 rounded-xl w-full border-white gap-5 overflow-x-scroll">
           {createTags}
         </div>
       </div>

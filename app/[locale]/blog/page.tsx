@@ -8,6 +8,7 @@ import articlesData from "@/public/articles/data.json";
 import HighLightsOfTheWeek from "../components/blog/HighLightsOfTheWeek/HighLightsOfTheWeek";
 import News from "../components/blog/News/News";
 import Manuals from "../components/blog/Manuals/Manuals";
+import InfoTable from "../components/InfoTable/InfoTable";
 
 export default function Home() {
   const t = useTranslations("Blog");
@@ -33,12 +34,12 @@ export default function Home() {
       {/*   <News data={articlesData} /> */}
       {/*   <Lantern className="bottom-56 right-0 -translate-x-1/2" /> */}
       {/* </section> */}
-      {/* <section id="manuals"> */}
-      {/*   <h1 className="text-7xl mb-20">{t("title:manuals")}</h1> */}
-      {/*   <p className="text-justify px-5 pb-10">{t("subtitle:manuals")}</p> */}
-      {/*   <Manuals data={articlesData} /> */}
-      {/*   <Lantern className="bottom-56 right-0 -translate-x-1/2" /> */}
-      {/* </section> */}
+      <section>
+        <h1 className="text-7xl mb-20 ">{t("title:manuals")}</h1>
+        <p className="text-justify px-5 pb-10">{t("subtitle:manuals")}</p>
+        <Manuals data={articlesData} />
+        <Lantern className="bottom-56 right-0 -translate-x-1/2" />
+      </section>
       <section>
         <h1 className="text-7xl mb-20">{t("title:explore")}</h1>
         <p className="text-justify px-5">{t("subtitle:explore")}</p>

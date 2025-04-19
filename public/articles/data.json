@@ -2,7 +2,7 @@
   {
     "title": { "en": "how to not use linux", "br": "Como não usar linux" },
     "path": "/articles/how_to_not_use_linux",
-    "thumbnailPath": "/imgs/articles/linux.png",
+    "thumbnailPath": "/imgs/articles/linux/linux.png",
     "thumbnailAlt": {
       "en": "Tux image, the linux mascot.",
       "br": "Imagem do Tux, penguim do linux."
@@ -27,6 +27,24 @@
     "tags": {
       "en": ["linux", "tecnology", "sftp", "permissions", "server"],
       "br": ["linux", "tecnologia", "sftp", "permissões", "servidor"]
+    }
+  },
+  {
+    "title": {
+      "en": "VIM manual",
+      "br": "Manual do VIM"
+    },
+    "path": "/articles/vim",
+    "thumbnailPath": "/imgs/articles/vim_manual/vim.png",
+    "thumbnailAlt": {
+      "en": "VIM logo.",
+      "br": "VIM logo."
+    },
+    "createdAt": "2025-04-16",
+    "lastModified": "2025-04-16",
+    "tags": {
+      "en": ["linux", "vi", "vim", "text editor", "manuals"],
+      "br": ["linux", "vi", "vim", "editores de texto", "manuais"]
     }
   }
 ]

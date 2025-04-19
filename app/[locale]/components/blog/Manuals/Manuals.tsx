@@ -1,25 +1,28 @@
 import Card from "../../Card/Card";
-import { dataInterface, GetLanguage } from "@/app/[locale]/config";
+import { dataInterface } from "@/app/[locale]/types";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 export default function News({ data }: { data: Array<dataInterface> }) {
-  const { currentLanguage } = GetLanguage();
+  const { locale } = useParams<{ locale: string }>();
 
   const createArticle = data
-    .filter((metadata) => metadata.manual)
+    .filter((metadata) => String(metadata.tags.en).includes("manuals"))
     .map((metadata, key) => {
       return (
         <Link
-          href={`blog/article?title=${metadata.title[currentLanguage as keyof typeof metadata.title]}&thumbnail=${metadata.thumbnail}`}
+          href={`blog/article?path=${encodeURIComponent(metadata.path)}&thumbnail=${encodeURIComponent(metadata.thumbnailPath)}`}
           key={key}
         >
           <Card
             key={key}
-            title={
-              metadata.title[currentLanguage as keyof typeof metadata.title]
+            title={metadata.title[locale as keyof typeof metadata.title]}
+            imagePath={metadata.thumbnailPath}
+            imageAlt={
+              metadata.thumbnailAlt[
+                locale as keyof typeof metadata.thumbnailAlt
+              ]
             }
-            imagePath={metadata.thumbnail}
-            imageAlt={metadata.thumbnailAlt}
             isReleased
           />
         </Link>
