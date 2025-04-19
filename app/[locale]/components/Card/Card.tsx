@@ -22,6 +22,7 @@ export default function Card({
                   hover:shadow-neon duration-500 lg:w-[400px] 
                   md:w-[300px] sm:w-[100px] h-96`}
       showTitle
+      floatHeader
       title={title}
     >
       {!isReleased ? (
@@ -32,14 +33,9 @@ export default function Card({
           {t("text:coming_soon")}
         </div>
       ) : null}
-
-      <Image
-        src={imagePath}
-        width={100}
-        height={150}
-        alt={imageAlt}
-        className="w-full h-full rounded-md"
-      />
+      <div>
+        <Image src={imagePath} fill alt={imageAlt} className="rounded-md" />
+      </div>
     </Table>
   );
 }

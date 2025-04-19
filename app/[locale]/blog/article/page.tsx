@@ -39,7 +39,7 @@ function ArticleContent() {
   return (
     <main>
       <section className="flex flex-col text-left overflow-scroll items-center justify-center gap-10">
-        <header id="article-header" className="w-screen h-96">
+        <header id="article-header" className="blur-sm w-screen h-96">
           <Link
             href="/blog"
             className=" absolute top-24 left-5 text-2xl cursor-pointer"
