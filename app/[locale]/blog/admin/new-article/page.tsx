@@ -8,9 +8,12 @@ import remarkGfm from "remark-gfm";
 import remarkHTML from "remark-html";
 
 function ArticleContent() {
-  const [content, setContent] = useState(
-    () => localStorage.getItem("new-article-tmp") ?? "# Hello, world!",
-  );
+  const [content, setContent] = useState(() => {
+    if (typeof window != "undefined") {
+      return localStorage.getItem("new-article-tmp") ?? "# Hello, world!";
+    } else return "# Hello, world!";
+  });
+
   const [filename, setFilename] = useState("untitled");
 
   const exportAsFile = (e: MouseEvent<HTMLButtonElement>) => {
