@@ -14,7 +14,7 @@ export default function Table({
   children: ReactNode;
 }) {
   const headerClass = floatHeader
-    ? "absolute rounded-xl z-10 top-2 border-2 bg-red-900 w-fit h-fit text-2xl"
+    ? "absolute rounded-xl z-10 top-2 border-2 bg-red-900 w-[90%] md:w-fit h-fit text-2xl"
     : "text-4xl w-full";
 
   return (
