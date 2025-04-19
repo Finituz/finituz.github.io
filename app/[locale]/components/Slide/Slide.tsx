@@ -39,10 +39,11 @@ export default function Slide({
     const wrapperChildren = wrapper.current.querySelectorAll(":scope > *");
     const wrapperChildrenLength: number = wrapperChildren.length - 1;
 
-    console.log(wrapperChildren);
     count = count < 0 ? wrapperChildrenLength : count;
 
     wrapperChildren.forEach((child, index: number) => {
+      child.classList.add("transition-all", "duration-500");
+
       count == index
         ? child.classList.remove("hidden")
         : child.classList.add("hidden");

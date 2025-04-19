@@ -1,13 +1,13 @@
 import Card from "../../Card/Card";
-import { dataInterface, GetLanguage } from "@/app/[locale]/types";
+import { dataInterface } from "@/app/[locale]/types";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 export default function News({ data }: { data: Array<dataInterface> }) {
-  const { currentLanguage } = GetLanguage();
-
-  const createArticle = data.map((data, key) => {
+  const { locale } = useParams<{ locale: string }>();
+  const createArticle = data.map((metadata, key) => {
     const currentDate = new Date();
-    const createdAt = new Date(data.createdAt);
+    const createdAt = new Date(metadata.createdAt);
     const timeDiff =
       currentDate.getMonth() == createdAt.getMonth() &&
       currentDate.getDate() - createdAt.getDate() < 7;
@@ -15,14 +15,18 @@ export default function News({ data }: { data: Array<dataInterface> }) {
     if (timeDiff) {
       return (
         <Link
-          href={`blog/article?title=${data.title[currentLanguage as keyof typeof data.title]}&thumbnail=${data.thumbnail}`}
+          href={`blog/article?title=${encodeURIComponent(metadata.path)}&thumbnail=${encodeURIComponent(metadata.thumbnailPath)}`}
           key={key}
         >
           <Card
             key={key}
-            title={data.title[currentLanguage as keyof typeof data.title]}
-            imagePath={data.thumbnail}
-            imageAlt={data.thumbnailAlt}
+            title={metadata.title[locale as keyof typeof metadata.title]}
+            imagePath={metadata.thumbnailPath}
+            imageAlt={
+              metadata.thumbnailAlt[
+                locale as keyof typeof metadata.thumbnailAlt
+              ]
+            }
             isReleased
           />
         </Link>
