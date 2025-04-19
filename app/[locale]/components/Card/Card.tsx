@@ -19,7 +19,7 @@ export default function Card({
     <Table
       className={`relative flex items-center justify-center text-center
                   overflow-hidden hover:scale-110 transition-all 
-                  hover:shadow-neon duration-500 w-[400px] h-96`}
+                  hover:shadow-neon duration-500 lg:w-[400] w-[350px] h-96`}
       showTitle
       floatHeader
       title={title}
