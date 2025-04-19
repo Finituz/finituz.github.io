@@ -11,27 +11,32 @@ export default function HighLightsOfTheWeek({
 }) {
   const { locale } = useParams<{ locale: string }>();
 
-  const cards = data.map((metadata, key) => (
-    <Link
-      className="flex items-center justify-center"
-      href={`blog/article?path=${encodeURIComponent(metadata.path)}&thumbnail=${encodeURIComponent(metadata.thumbnailPath)}`}
-      key={key}
-    >
-      <Card
+  const cards = data.map((metadata, key) => {
+    const isMiddleCard = key == 1 ? "scale-110 z-10" : null;
+
+    return (
+      <Link
+        className={"flex md:flex items-center justify-center " + isMiddleCard}
+        href={`blog/article?path=${encodeURIComponent(metadata.path)}&thumbnail=${encodeURIComponent(metadata.thumbnailPath)}`}
         key={key}
-        title={metadata.title[locale as keyof typeof metadata.title]}
-        imagePath={metadata.thumbnailPath}
-        imageAlt={
-          metadata.thumbnailAlt[locale as keyof typeof metadata.thumbnailAlt]
-        }
-        isReleased
-      />
-    </Link>
-  ));
+      >
+        <Card
+          key={key}
+          title={metadata.title[locale as keyof typeof metadata.title]}
+          imagePath={metadata.thumbnailPath}
+          imageAlt={
+            metadata.thumbnailAlt[locale as keyof typeof metadata.thumbnailAlt]
+          }
+          isReleased
+        />
+      </Link>
+    );
+  });
 
   return (
     <Slide
       id="hightlights-wrapper"
+      className="md:-gap-x-10"
       buttonLeftClass="left-8 top-1/2 transform -translate-y-1/2"
       buttonRightClass="right-8 top-1/2 transform -translate-y-1/2"
     >
