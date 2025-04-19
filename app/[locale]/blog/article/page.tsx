@@ -39,14 +39,13 @@ function ArticleContent() {
   return (
     <main>
       <section className="flex flex-col text-left overflow-scroll items-center justify-center gap-10">
-        <header id="article-header" className="blur-sm w-screen h-96">
-          <Link
-            href="/blog"
-            className=" absolute top-24 left-5 text-2xl cursor-pointer"
-          >
-            {"<"} {t("button::go-back")}
-          </Link>
-        </header>
+        <Link
+          href="/blog"
+          className="absolute top-24 left-5 text-2xl cursor-pointer hover:underline"
+        >
+          {"<"} {t("button::go-back")}
+        </Link>
+        <header id="article-header" className="blur-sm w-screen h-96"></header>
         <article id="remark" className="w-full p-8 lg:w-1/2">
           <Markdown remarkPlugins={[remarkGfm, remarkHTML]}>{content}</Markdown>
           <Lantern className="bottom-0 left-0 -translate-x-1/2" />
