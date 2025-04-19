@@ -14,13 +14,13 @@ export default function Home() {
   const t = useTranslations("Blog");
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center px-8 justify-between">
+    <main className="flex min-h-screen w-full flex-col items-center px-5 md:px-8 justify-between">
       <section
         id="home"
         className="flex flex-col items-center justify-center gap-10 h-fit text-center"
       >
         <h1 className="text-7xl">{t("title:hightlights-week")}</h1>
-        <p className="text-justify px-5">{t("subtitle:hightlights-week")}</p>
+        <p className="text-justify md:px-5">{t("subtitle:hightlights-week")}</p>
         <HighLightsOfTheWeek data={articlesData} />
         <Lantern className="top-56 left-0 -translate-x-1/2" />
         <div className="flex relative flex-col mt-20 top-0 text-7xl animate-bounce">
@@ -36,13 +36,13 @@ export default function Home() {
       {/* </section> */}
       <section>
         <h1 className="text-7xl mb-20 ">{t("title:manuals")}</h1>
-        <p className="text-justify px-5 pb-10">{t("subtitle:manuals")}</p>
+        <p className="text-justify md:px-5 pb-10">{t("subtitle:manuals")}</p>
         <Manuals data={articlesData} />
         <Lantern className="bottom-56 right-0 -translate-x-1/2" />
       </section>
       <section>
         <h1 className="text-7xl mb-20">{t("title:explore")}</h1>
-        <p className="text-justify px-5">{t("subtitle:explore")}</p>
+        <p className="text-justify md:px-5">{t("subtitle:explore")}</p>
         <GenArticles data={articlesData} />
         <Lantern className="top-56 left-0 -translate-x-1/2" />
       </section>
