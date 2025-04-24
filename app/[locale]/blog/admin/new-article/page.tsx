@@ -42,7 +42,7 @@ function ArticleContent() {
     data.append("md", file);
 
     try {
-      const res = await fetch("http://localhost:81/upload", {
+      const res = await fetch("http://localhost:81/articles", {
         method: "POST",
         body: data,
       });
@@ -63,12 +63,7 @@ function ArticleContent() {
 
     setContent((prevContent) => {
       if (prevContent != e.target.value) {
-        const tmp = {
-          filename,
-          content,
-        };
-
-        localStorage.setItem("new-article-tmp", JSON.stringify(tmp));
+        localStorage.setItem("new-article-tmp", content);
       }
 
       return e.target.value;
@@ -78,7 +73,7 @@ function ArticleContent() {
   return (
     <main className="w-full">
       <section className="flex flex-col text-left w-full overflow-scroll items-center justify-center gap-10">
-        <article id="remark" className="w-full p-8">
+        <article id="remark" className="w-full h-full p-8">
           <div className="flex gap-10 w-full">
             <form
               onSubmit={sendToBlog}
@@ -122,9 +117,8 @@ function ArticleContent() {
                 <input
                   required
                   name="tags"
-                  onChange={(e) => setFilename(e.currentTarget.value)}
                   className="rounded-xl w-full text-black p-2"
-                  placeholder="Put tags separate by space here...."
+                  placeholder="Put tags separate by comma here...."
                 />
               </label>
               <fieldset className="flex gap-5">
@@ -146,7 +140,7 @@ function ArticleContent() {
             <label className="w-full h-full">
               Preview:
               <Markdown
-                className="w-full h-full"
+                className="w-full h-screen overflow-y-scroll"
                 remarkPlugins={[remarkGfm, remarkHTML]}
               >
                 {content}

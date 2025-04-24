@@ -12,11 +12,13 @@ export default function HighLightsOfTheWeek({
   const { locale } = useParams<{ locale: string }>();
 
   const cards = data.map((metadata, key) => {
+    if (key > 2) return;
+
     const isMiddleCard = key == 1 ? "md:scale-110 md:z-10" : null;
 
     return (
       <Link
-        className={"flex md:flex items-center justify-center " + isMiddleCard}
+        className={`flex md:flex items-center justify-center ${isMiddleCard}`}
         href={`blog/article?path=${encodeURIComponent(metadata.path)}&thumbnail=${encodeURIComponent(metadata.thumbnailPath)}`}
         key={key}
       >

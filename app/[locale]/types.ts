@@ -14,6 +14,7 @@ export type thumbnailAltType = {
 };
 
 export interface dataInterface {
+  uuid: string;
   title: titleType;
   path: string;
   thumbnailPath: string;

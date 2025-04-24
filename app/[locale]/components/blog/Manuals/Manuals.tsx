@@ -7,7 +7,7 @@ export default function News({ data }: { data: Array<dataInterface> }) {
   const { locale } = useParams<{ locale: string }>();
 
   const createArticle = data
-    .filter((metadata) => String(metadata.tags.en).includes("manuals"))
+    .filter((metadata) => String(metadata.tags.en).includes("manual"))
     .map((metadata, key) => {
       return (
         <Link

@@ -1,5 +1,6 @@
 [
   {
+    "uuid": "1e15b978-688c-4db2-8fe6-091f135c8719",
     "title": { "en": "how to not use linux", "br": "Como não usar linux" },
     "path": "/articles/how_to_not_use_linux",
     "thumbnailPath": "/imgs/articles/linux/linux.png",
@@ -12,6 +13,7 @@
     "tags": { "en": ["linux", "tecnology"], "br": ["linux", "tecnologia"] }
   },
   {
+    "uuid": "69147c7f-58d9-4fea-9777-cb0adc11a7a7",
     "title": {
       "en": "how to set default sftp permissions",
       "br": "Como setar permissões padrões no sftp"
@@ -30,21 +32,29 @@
     }
   },
   {
-    "title": {
-      "en": "VIM manual",
-      "br": "Manual do VIM"
-    },
+    "uuid": "c5cb740d-f93f-4722-b99e-dcea946dd3b7",
+    "title": { "en": "VIM manual", "br": "Manual do VIM" },
     "path": "/articles/vim",
     "thumbnailPath": "/imgs/articles/vim_manual/vim.png",
-    "thumbnailAlt": {
-      "en": "VIM logo.",
-      "br": "VIM logo."
-    },
+    "thumbnailAlt": { "en": "VIM logo.", "br": "VIM logo." },
     "createdAt": "2025-04-16",
     "lastModified": "2025-04-16",
     "tags": {
-      "en": ["linux", "vi", "vim", "text editor", "manuals"],
-      "br": ["linux", "vi", "vim", "editores de texto", "manuais"]
+      "en": ["linux", "vi", "vim", "text editor", "manual"],
+      "br": ["linux", "vi", "vim", "editores de texto", "manual"]
     }
+  },
+  {
+    "uuid": "aa73f106-2fdb-487a-ad66-86965c59d533",
+    "title": {
+      "br": "10 comandos do Linux que vocÃª tem que saber.",
+      "en": "10 Linux commands you have to know."
+    },
+    "path": "/articles/10_linux_commands_you_have_to_know",
+    "thumbnailPath": "/imgs/articles/10_linux_commands_you_have_to_know/thumbnail.png",
+    "thumbnailAlt": { "br": "test", "en": "test" },
+    "createdAt": "4/21/2025",
+    "lastModified": "4/21/2025",
+    "tags": { "br": ["test", "oi", ""], "en": ["test", "oi", ""] }
   }
 ]

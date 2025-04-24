@@ -1,0 +1,83 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { dataInterface } from "../../types";
+import { RiAddLine, RiDeleteBin4Line, RiPencilLine } from "react-icons/ri";
+import { Link } from "@/i18n/routing";
+
+export default function Page() {
+  const [articles, setArticles] = useState<Array<dataInterface>>();
+  const [searchKey, setSearchKey] = useState<string>("");
+
+  const listArticles = async () => {
+    await fetch("http://localhost:81/articles", { method: "GET" }).then(
+      async (list) => {
+        const listArticles: Array<dataInterface> = await list.json();
+
+        setArticles(listArticles);
+      },
+    );
+  };
+
+  useEffect(() => {
+    listArticles();
+  }, []);
+
+  const genList = () => {
+    if (!articles) {
+      return <li>There is no articles available.</li>;
+    }
+    const filteredArticles = articles.filter((article) =>
+      JSON.stringify(article).toLowerCase().includes(searchKey.toLowerCase()),
+    );
+    if (filteredArticles.length <= 0) {
+      return <li>{`Can't find "${searchKey}" article.`}</li>;
+    }
+    return filteredArticles.map((article, key) => {
+      return (
+        <li
+          className="flex bg-red-900 hover:shadow-neon cursor-pointer hover:scale-105 transition-all duration-500 justify-between rounded-xl border p-5 text-center"
+          key={key}
+        >
+          <div className="w-[80%] break-words">{article.title.br}</div>
+          <div className="flex gap-5">
+            <RiPencilLine />
+            <RiDeleteBin4Line onClick={() => deleteArticle(article.uuid)} />
+          </div>
+        </li>
+      );
+    });
+  };
+
+  const deleteArticle = async (uuid: string) => {
+    await fetch("http://localhost:81/articles", {
+      method: "DELETE",
+      body: JSON.stringify({ uuid }),
+    }).then(async (deleted) => {
+      if (deleted.ok) {
+        console.log(deleted);
+      }
+    });
+  };
+
+  return (
+    <section className="flex flex-col justify-center items-center w-full h-screen">
+      <h1 className="absolute top-32 left-10 text-5xl">Admin&apos;s page.</h1>
+      <label className="flex flex-col gap-5">
+        <span className="flex justify-between">
+          <b className="text-3xl">Articles</b>
+          <input
+            onChange={(e) => setSearchKey(e.target.value)}
+            className="p-2 rounded-xl bg-transparent border"
+            placeholder="Search article..."
+          />
+          <Link href={"/blog/admin/new-article"}>
+            <RiAddLine className="text-5xl border hover:shadow-neon duration-500 transition-all hover:scale-105 cursor-pointer bg-red-900 rounded-xl" />
+          </Link>
+        </span>
+        <hr />
+        <ul className="flex flex-col gap-2">{genList()}</ul>
+      </label>
+    </section>
+  );
+}
