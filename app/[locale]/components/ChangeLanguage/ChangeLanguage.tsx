@@ -36,7 +36,7 @@ function ChangeLanguage() {
               className={"flex hover:bg-red-500 p-2 rounded-xl " + selected}
             >
               <Link
-                href={`/${loc.replace("/", "")}/${currentPath}?${currentQuery}`}
+                href={`/${loc}${currentPath}?${currentQuery}`}
                 className="flex"
               >
                 <Image
