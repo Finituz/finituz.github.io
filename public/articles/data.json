@@ -55,6 +55,10 @@
     "thumbnailAlt": { "br": "test", "en": "test" },
     "createdAt": "4/21/2025",
     "lastModified": "4/21/2025",
-    "tags": { "br": ["test", "oi", ""], "en": ["test", "oi", ""] }
+    "tags": {
+      "br": ["comandos", "linux", "essencial"],
+      "en": ["commands", "linux", "essencial"]
+    }
   }
 ]
+

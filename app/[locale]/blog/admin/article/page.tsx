@@ -1,14 +1,26 @@
 "use client";
 
-import { useState, Suspense, MouseEvent, FormEvent, ChangeEvent } from "react"; // Import Suspense
+import {
+  useState,
+  Suspense,
+  MouseEvent,
+  FormEvent,
+  ChangeEvent,
+  useEffect,
+} from "react"; // Import Suspense
 import Markdown from "react-markdown";
 import Lantern from "../../../components/Lantern/Lantern";
 import { useTranslations } from "next-intl";
 import remarkGfm from "remark-gfm";
 import remarkHTML from "remark-html";
 import { Link } from "@/i18n/routing";
+import { useSearchParams } from "next/navigation";
+import { ARTICLES_URL } from "@/app/utils";
+import { dataInterface } from "@/app/[locale]/types";
 
 function ArticleContent() {
+  const params = useSearchParams();
+  const isEditMode = params.get("editMode");
   const [content, setContent] = useState(() => {
     if (typeof window != "undefined") {
       return localStorage.getItem("new-article-tmp") ?? "# Hello, world!";
@@ -16,6 +28,24 @@ function ArticleContent() {
   });
 
   const [filename, setFilename] = useState("untitled");
+  const [thumbnailAlt, setThumbnailAlt] = useState("");
+  const [tags, setTags] = useState([""]);
+
+  const editMode = () => {
+    if (!isEditMode) return;
+    const uuid = params.get("uuid");
+    fetch(ARTICLES_URL.concat(`/${uuid}`)).then(async (article) => {
+      setContent(await article.text());
+    });
+
+    fetch(ARTICLES_URL.concat(`/metadata/${uuid}`)).then(async (article) => {
+      const metadata: dataInterface = await article.json();
+
+      setFilename(metadata.title.br);
+      setThumbnailAlt(metadata.thumbnailAlt.br);
+      setTags(metadata.tags.br);
+    });
+  };
 
   const exportAsFile = (e: MouseEvent<HTMLButtonElement>) => {
     const mdContent = e.currentTarget.value;
@@ -71,6 +101,7 @@ function ArticleContent() {
     });
   };
 
+  useEffect(editMode, [isEditMode, params]);
   return (
     <main className="w-full">
       <section className="flex flex-col text-left w-full overflow-scroll items-center justify-center gap-10">
@@ -105,6 +136,7 @@ function ArticleContent() {
                 <input
                   required
                   name="thumbnailAlt"
+                  value={thumbnailAlt}
                   className="rounded-xl w-full text-black p-2"
                   placeholder="Describe the image..."
                 />
@@ -124,6 +156,7 @@ function ArticleContent() {
                 <input
                   required
                   name="tags"
+                  value={String(tags)}
                   className="rounded-xl w-full text-black p-2"
                   placeholder="Put tags separate by comma here...."
                 />
@@ -140,7 +173,7 @@ function ArticleContent() {
                   type="submit"
                   className="border hover:shadow-neon rounded-xl p-2 transition-shadow duration-500"
                 >
-                  send to blog
+                  {isEditMode ? "update article" : "send to blog"}
                 </button>
               </fieldset>
             </form>

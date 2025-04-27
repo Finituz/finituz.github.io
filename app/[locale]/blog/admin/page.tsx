@@ -5,6 +5,7 @@ import { dataInterface } from "../../types";
 import { RiAddLine, RiDeleteBin4Line, RiPencilLine } from "react-icons/ri";
 import { Link } from "@/i18n/routing";
 import { useParams } from "next/navigation";
+import { ARTICLES_URL } from "@/app/utils";
 
 export default function Page() {
   const [articles, setArticles] = useState<Array<dataInterface>>();
@@ -12,18 +13,27 @@ export default function Page() {
   const { locale } = useParams<{ locale: string }>();
 
   const listArticles = async () => {
-    await fetch("http://localhost:81/articles", { method: "GET" }).then(
-      async (list) => {
-        const listArticles: Array<dataInterface> = await list.json();
+    await fetch(ARTICLES_URL, { method: "GET" }).then(async (list) => {
+      const listArticles: Array<dataInterface> = await list.json();
 
-        setArticles(listArticles);
-      },
-    );
+      setArticles(listArticles);
+    });
   };
 
   useEffect(() => {
     listArticles();
   }, []);
+
+  const deleteArticle = async (uuid: string) => {
+    await fetch(ARTICLES_URL.concat(`/${uuid}`), { method: "DELETE" }).then(
+      async (deleted) => {
+        if (deleted.ok) {
+          listArticles();
+          console.log(deleted);
+        }
+      },
+    );
+  };
 
   const genList = () => {
     if (!articles) {
@@ -51,22 +61,18 @@ export default function Page() {
             {title.length > 25 ? title.slice(0, 25).concat("...") : title}
           </div>
           <div className="flex gap-5">
-            <RiPencilLine />
+            <Link
+              href={{
+                pathname: `/blog/admin/article`,
+                query: { editMode: true, uuid: article.uuid },
+              }}
+            >
+              <RiPencilLine />
+            </Link>
             <RiDeleteBin4Line onClick={() => deleteArticle(article.uuid)} />
           </div>
         </li>
       );
-    });
-  };
-
-  const deleteArticle = async (uuid: string) => {
-    await fetch("http://localhost:81/articles", {
-      method: "DELETE",
-      body: JSON.stringify({ uuid }),
-    }).then(async (deleted) => {
-      if (deleted.ok) {
-        console.log(deleted);
-      }
     });
   };
 
@@ -81,7 +87,7 @@ export default function Page() {
             className="p-2 rounded-xl bg-transparent border"
             placeholder="Search article..."
           />
-          <Link href={"/blog/admin/new-article"}>
+          <Link href={"/blog/admin/article"}>
             <RiAddLine className="text-5xl border hover:shadow-neon duration-500 transition-all hover:scale-105 cursor-pointer bg-red-900 rounded-xl" />
           </Link>
         </span>
