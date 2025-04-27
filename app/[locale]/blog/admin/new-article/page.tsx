@@ -6,6 +6,7 @@ import Lantern from "../../../components/Lantern/Lantern";
 import { useTranslations } from "next-intl";
 import remarkGfm from "remark-gfm";
 import remarkHTML from "remark-html";
+import { Link } from "@/i18n/routing";
 
 function ArticleContent() {
   const [content, setContent] = useState(() => {
@@ -73,6 +74,12 @@ function ArticleContent() {
   return (
     <main className="w-full">
       <section className="flex flex-col text-left w-full overflow-scroll items-center justify-center gap-10">
+        <Link
+          href="/blog/admin"
+          className="absolute top-24 left-5 text-2xl cursor-pointer hover:underline"
+        >
+          {"<"} {"Go back"}
+        </Link>
         <article id="remark" className="w-full h-full p-8">
           <div className="flex gap-10 w-full">
             <form

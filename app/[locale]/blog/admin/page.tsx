@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { dataInterface } from "../../types";
 import { RiAddLine, RiDeleteBin4Line, RiPencilLine } from "react-icons/ri";
 import { Link } from "@/i18n/routing";
+import { useParams } from "next/navigation";
 
 export default function Page() {
   const [articles, setArticles] = useState<Array<dataInterface>>();
   const [searchKey, setSearchKey] = useState<string>("");
+  const { locale } = useParams<{ locale: string }>();
 
   const listArticles = async () => {
     await fetch("http://localhost:81/articles", { method: "GET" }).then(
@@ -33,13 +35,21 @@ export default function Page() {
     if (filteredArticles.length <= 0) {
       return <li>{`Can't find "${searchKey}" article.`}</li>;
     }
+
     return filteredArticles.map((article, key) => {
+      const title = article.title[locale as keyof typeof article.title];
+
       return (
         <li
-          className="flex bg-red-900 hover:shadow-neon cursor-pointer hover:scale-105 transition-all duration-500 justify-between rounded-xl border p-5 text-center"
+          className={`flex bg-red-900 hover:shadow-neon cursor-pointer
+                      hover:scale-105 transition-all duration-500 justify-between
+                      rounded-xl border p-5 text-center`}
           key={key}
+          title={title}
         >
-          <div className="w-[80%] break-words">{article.title.br}</div>
+          <div className="w-[80%] break-words">
+            {title.length > 25 ? title.slice(0, 25).concat("...") : title}
+          </div>
           <div className="flex gap-5">
             <RiPencilLine />
             <RiDeleteBin4Line onClick={() => deleteArticle(article.uuid)} />
@@ -62,8 +72,8 @@ export default function Page() {
 
   return (
     <section className="flex flex-col justify-center items-center w-full h-screen">
-      <h1 className="absolute top-32 left-10 text-5xl">Admin&apos;s page.</h1>
-      <label className="flex flex-col gap-5">
+      <h1 className="absolute top-32  left-10 text-5xl">Admin&apos;s page.</h1>
+      <label className="flex flex-col w-1/3 gap-5">
         <span className="flex justify-between">
           <b className="text-3xl">Articles</b>
           <input

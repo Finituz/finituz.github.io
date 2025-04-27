@@ -26,7 +26,8 @@ export default function GenArticles({ data }: { data: Array<dataInterface> }) {
     const filteredItems = data.filter(
       (metadata) =>
         metadata.tags[locale as keyof typeof metadata.tags]?.some(
-          (tag: string) => tag.includes(searchValue),
+          (tag: string) =>
+            tag.toLowerCase().includes(searchValue.toLowerCase()),
         ) ||
         metadata.title[locale as keyof typeof metadata.title].includes(
           searchValue,

@@ -206,4 +206,3 @@ ls [options] [path]
 - `ls -l` → Detailed list.
 - `ls -a` → Includes hidden files.
 - `ls -lh` → Human-readable sizes (KB, MB...).
-
